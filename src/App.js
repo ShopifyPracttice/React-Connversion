@@ -12,6 +12,14 @@ import Services from './Pages/Services';
 import IndependentQualityAssurance from './Pages/IndependentQualityAssurance';
 import SitePerformanceImprovement from './Pages/SitePerformanceImprovement';
 import About from './Pages/About';
+import Reporting from './Pages/Reporting';
+import CurrentSituationAnalysis from './Pages/CurrentSituationAnalysis';
+import EnvironmentalSustanabilityPledge from './Pages/EnvironmentalSustainabilityPledge';
+import SocialImpactPledge from './Pages/SocialImpactPledge';
+import Training from './Pages/Training';
+import Resources from './Pages/Resources';
+import PressRelease from './Pages/PressReleases';
+import PrivacyPolicy from './Pages/PrivacyPolicy';
 function App() {
   useEffect(() => {
     const handleScroll = () => {
@@ -49,6 +57,14 @@ function App() {
          <Route path='/' element={<HomePage/>}/>
          <Route path='/about-us' element={<About/>}/>
          <Route path='/services' element={<Services/>}/>
+         <Route path='/resources' element={<Resources/>}/>
+         <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
+         <Route path='/press-releases' element={<PressRelease/>}/>
+         <Route path='/social-impact-pledge' element={<SocialImpactPledge/>}/>
+         <Route path='/service-detail/training' element={<Training/>}/>
+         <Route path='/environmental-sustainability-pledge' element={<EnvironmentalSustanabilityPledge/>}/>
+         <Route path='/service-detail/reporting' element={<Reporting/>}/>
+         <Route path='/service-detail/current-situation-analysis' element={<CurrentSituationAnalysis/>}/>
          <Route path='/service-detail/independent-quality-assurance' element={<IndependentQualityAssurance/>}/>
          <Route path='/service-detail/site-performance-improvement' element={<SitePerformanceImprovement/>}/>
        </Routes>
