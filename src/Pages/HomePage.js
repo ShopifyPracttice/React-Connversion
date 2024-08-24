@@ -26,7 +26,7 @@ import Client12 from "../images/client/client12.svg";
 import { Link } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
 
-const HomePage = ()=>{
+const HomePage = ({setDisplayForm})=>{
     const [formData, setFormData] = useState({
         full_name: '',
         company_name: '',
@@ -440,7 +440,7 @@ const HomePage = ()=>{
                             </div>
                           </div>
                         </div>
-                        <Link to="#getInTouch" className="custome-btn">
+                        <Link to="#" onClick={()=>setDisplayForm(true)} className="custome-btn">
                           <span className="txt">Get in Touch</span>
                           <span className="icon"><img className="img-fluid lazyload" src={RightArrow2} alt="logo" /></span>
                         </Link>

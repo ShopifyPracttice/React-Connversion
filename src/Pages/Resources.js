@@ -7,6 +7,9 @@ import RightArrow2 from "../images/icon/right-arrow.svg";
 import RightArrow from "../images/icon/right-arrow-2.svg";
 import NewsLetter from "../images/icon/newsletter-icon.svg";
 import TouchLogo from "../images/bg/getInTouch-bg.webp";
+import BlogImg from "../images/resources/resources-blog-img.png";
+import BlogImg2 from "../images/resources/resources-blog-img2.png";
+import BlogImg3 from "../images/resources/resources-blog-img3.png";
 
 
 const Resources = () =>{
@@ -71,11 +74,11 @@ return (
                 </div>
                 <div className="resources-blog-bottom pt-30">
                   <div className="row rowBox" id="resources-container">
-                    {/*<div class="col-lg-4 col-md-4 col-sm-6 col-12 columnBox custome-column-box mb-20">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-12 columnBox custome-column-box mb-20">
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src="images/resources/resources-blog-img.png" alt="">
+                                              <img src={BlogImg} alt=""/>
                                           </div>
                                           <div class="resources-blog-box-inner">
                                               <p>Why Independent Quality Assurance is Essential for Accurate ESG Reports
@@ -88,7 +91,7 @@ return (
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src="images/resources/resources-blog-img2.png" alt="">
+                                              <img src={BlogImg2} alt=""/>
                                           </div>
                                           <div class="resources-blog-box-inner">
                                               <p>Ways to know if your supplier is disposing plastic properly!</p>
@@ -100,7 +103,7 @@ return (
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src="images/resources/resources-blog-img3.png" alt="">
+                                              <img src={BlogImg3} alt=""/>
                                           </div>
                                           <div class="resources-blog-box-inner">
                                               <p>What the EU's New Deforestation Law Means for Indian Companies! Key f...
@@ -113,7 +116,7 @@ return (
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src="images/resources/resources-blog-img.png" alt="">
+                                              <img src={BlogImg} alt=""/>
                                           </div>
                                           <div class="resources-blog-box-inner">
                                               <p>Why Independent Quality Assurance is Essential for Accurate ESG Reports
@@ -126,7 +129,7 @@ return (
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src="images/resources/resources-blog-img2.png" alt="">
+                                              <img src={BlogImg2} alt=""/>
                                           </div>
                                           <div class="resources-blog-box-inner">
                                               <p>Ways to know if your supplier is disposing plastic properly!</p>
@@ -138,7 +141,7 @@ return (
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src="images/resources/resources-blog-img3.png" alt="">
+                                              <img src={BlogImg3} alt=""/>
                                           </div>
                                           <div class="resources-blog-box-inner">
                                               <p>What the EU's New Deforestation Law Means for Indian Companies! Key f...
@@ -146,13 +149,13 @@ return (
                                           </div>
                                       </div>
                                   </div>
-                              </div>*/}
+                              </div>
                   </div>
                 </div>
               </div>
             </div>
           </section>
-          <section className="resources-blog-sec pt-50 pb-30 homeSubscribeSec" style={{display: 'none'}}>
+          <section className="resources-blog-sec pt-50 pb-30 homeSubscribeSec" >
             <div className="container">
               <div className="container-wrapper">
                 <div className="resources-blog-inner">
@@ -162,16 +165,16 @@ return (
                   </div>
                   <a href="#" className="custome-btn" target="_blank">
                     <span className="txt">Explore All</span>
-                    <span className="icon"><img className="img-fluid ls-is-cached lazyloaded" data-src="images/icon/right-arrow-2.svg" alt="logo" src="images/icon/right-arrow.svg" /></span>
+                    <span className="icon"><img className="img-fluid ls-is-cached lazyloaded" src={RightArrow2} alt="logo"  /></span>
                   </a>
                 </div>
                 <div className="resources-blog-bottom pt-30">
-                  {/*<div class="row">
+                  <div class="row">
                               <div class="col-lg-4 col-md-4 col-sm-6 col-12 columnBox custome-column-box mb-20">
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src="images/resources/resources-blog-img.png" alt="">
+                                              <img src={BlogImg} alt=""/>
                                           </div>
                                           <div class="resources-blog-box-inner">
                                               <p>Why Independent Quality Assurance is Essential for Accurate ESG Reports
@@ -184,7 +187,7 @@ return (
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src="images/resources/resources-blog-img2.png" alt="">
+                                              <img src={BlogImg2} alt=""/>
                                           </div>
                                           <div class="resources-blog-box-inner">
                                               <p>Ways to know if your supplier is disposing plastic properly!</p>
@@ -196,7 +199,7 @@ return (
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src="images/resources/resources-blog-img3.png" alt="">
+                                              <img src={BlogImg3} alt=""/>
                                           </div>
                                           <div class="resources-blog-box-inner">
                                               <p>What the EU's New Deforestation Law Means for Indian Companies! Key f...
@@ -209,7 +212,7 @@ return (
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src="images/resources/resources-blog-img.png" alt="">
+                                              <img src={BlogImg} alt=""/>
                                           </div>
                                           <div class="resources-blog-box-inner">
                                               <p>Why Independent Quality Assurance is Essential for Accurate ESG Reports
@@ -222,7 +225,7 @@ return (
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src="images/resources/resources-blog-img2.png" alt="">
+                                              <img src={BlogImg2} alt=""/>
                                           </div>
                                           <div class="resources-blog-box-inner">
                                               <p>Ways to know if your supplier is disposing plastic properly!</p>
@@ -234,7 +237,7 @@ return (
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src="images/resources/resources-blog-img3.png" alt="">
+                                              <img src={BlogImg3} alt=""/>
                                           </div>
                                           <div class="resources-blog-box-inner">
                                               <p>What the EU's New Deforestation Law Means for Indian Companies! Key f...
@@ -243,12 +246,12 @@ return (
                                       </div>
                                   </div>
                               </div>
-                          </div>*/}
+                          </div>
                 </div>
               </div>
             </div>
           </section>
-          <section className="resources-blog-sec pt-30 pb-30" style={{display: 'none'}}>
+          <section className="resources-blog-sec pt-30 pb-30">
             <div className="container">
               <div className="container-wrapper">
                 <div className="resources-blog-inner">
@@ -256,10 +259,10 @@ return (
                     <img src="images/icon/open-book-icon.png" alt="" />
                     <p>eBooks</p>
                   </div>
-                  <a href="#" className="custome-btn" target="_blank">
+                  <Link to="#" className="custome-btn" target="_blank">
                     <span className="txt">Explore All</span>
-                    <span className="icon"><img className="img-fluid ls-is-cached lazyloaded" data-src="images/icon/right-arrow-2.svg" alt="logo" src="images/icon/right-arrow.svg" /></span>
-                  </a>
+                    <span className="icon"><img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow2} /></span>
+                  </Link>
                 </div>
                 <div className="resources-blog-bottom pt-30">
                   <div className="row">
@@ -267,7 +270,7 @@ return (
                       <div className="custome-column-boxinner">
                         <div className="resources-blog-box">
                           <div className="custome-thumb">
-                            <img src="images/resources/resources-blog-img.png" alt="" />
+                            <img src={BlogImg} alt="" />
                           </div>
                           <div className="resources-blog-box-inner">
                             <p>Why Independent Quality Assurance is Essential for Accurate ESG Reports
@@ -280,7 +283,7 @@ return (
                       <div className="custome-column-boxinner">
                         <div className="resources-blog-box">
                           <div className="custome-thumb">
-                            <img src="images/resources/resources-blog-img2.png" alt="" />
+                            <img src={BlogImg2} alt="" />
                           </div>
                           <div className="resources-blog-box-inner">
                             <p>Ways to know if your supplier is disposing plastic properly!</p>
@@ -292,7 +295,7 @@ return (
                       <div className="custome-column-boxinner">
                         <div className="resources-blog-box">
                           <div className="custome-thumb">
-                            <img src="images/resources/resources-blog-img3.png" alt="" />
+                            <img src={BlogImg3} alt="" />
                           </div>
                           <div className="resources-blog-box-inner">
                             <p>What the EU's New Deforestation Law Means for Indian Companies! Key f...
@@ -305,7 +308,7 @@ return (
                       <div className="custome-column-boxinner">
                         <div className="resources-blog-box">
                           <div className="custome-thumb">
-                            <img src="images/resources/resources-blog-img.png" alt="" />
+                            <img src={BlogImg} alt="" />
                           </div>
                           <div className="resources-blog-box-inner">
                             <p>Why Independent Quality Assurance is Essential for Accurate ESG Reports
@@ -318,7 +321,7 @@ return (
                       <div className="custome-column-boxinner">
                         <div className="resources-blog-box">
                           <div className="custome-thumb">
-                            <img src="images/resources/resources-blog-img2.png" alt="" />
+                            <img src={BlogImg2} alt="" />
                           </div>
                           <div className="resources-blog-box-inner">
                             <p>Ways to know if your supplier is disposing plastic properly!</p>
@@ -330,7 +333,7 @@ return (
                       <div className="custome-column-boxinner">
                         <div className="resources-blog-box">
                           <div className="custome-thumb">
-                            <img src="images/resources/resources-blog-img3.png" alt="" />
+                            <img src={BlogImg3} alt="" />
                           </div>
                           <div className="resources-blog-box-inner">
                             <p>What the EU's New Deforestation Law Means for Indian Companies! Key f...
@@ -344,7 +347,7 @@ return (
               </div>
             </div>
           </section>
-          <section className="resources-blog-sec pt-50 pb-30 homeSubscribeSec" style={{display: 'none'}}>
+          <section className="resources-blog-sec pt-50 pb-30 homeSubscribeSec" >
             <div className="container">
               <div className="container-wrapper">
                 <div className="resources-blog-inner">
@@ -352,10 +355,10 @@ return (
                     <img src="images/icon/newspaper-icon.png" alt="" />
                     <p>Press Releases</p>
                   </div>
-                  <a href="#" className="custome-btn" target="_blank">
+                  <Link href="#" className="custome-btn" target="_blank">
                     <span className="txt">Explore All</span>
-                    <span className="icon"><img className="img-fluid ls-is-cached lazyloaded" data-src="images/icon/right-arrow-2.svg" alt="logo" src="images/icon/right-arrow.svg" /></span>
-                  </a>
+                    <span className="icon"><img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow2} /></span>
+                  </Link>
                 </div>
                 <div className="resources-blog-bottom pt-30">
                   <div className="row">
@@ -363,7 +366,7 @@ return (
                       <div className="custome-column-boxinner">
                         <div className="resources-blog-box">
                           <div className="custome-thumb">
-                            <img src="images/resources/resources-blog-img.png" alt="" />
+                            <img src={BlogImg} alt="" />
                           </div>
                           <div className="resources-blog-box-inner">
                             <p>Why Independent Quality Assurance is Essential for Accurate ESG Reports
@@ -376,7 +379,7 @@ return (
                       <div className="custome-column-boxinner">
                         <div className="resources-blog-box">
                           <div className="custome-thumb">
-                            <img src="images/resources/resources-blog-img2.png" alt="" />
+                            <img src={BlogImg2} alt="" />
                           </div>
                           <div className="resources-blog-box-inner">
                             <p>Ways to know if your supplier is disposing plastic properly!</p>
@@ -388,7 +391,7 @@ return (
                       <div className="custome-column-boxinner">
                         <div className="resources-blog-box">
                           <div className="custome-thumb">
-                            <img src="images/resources/resources-blog-img3.png" alt="" />
+                            <img src={BlogImg3} alt="" />
                           </div>
                           <div className="resources-blog-box-inner">
                             <p>What the EU's New Deforestation Law Means for Indian Companies! Key f...
@@ -401,7 +404,7 @@ return (
                       <div className="custome-column-boxinner">
                         <div className="resources-blog-box">
                           <div className="custome-thumb">
-                            <img src="images/resources/resources-blog-img.png" alt="" />
+                            <img src={BlogImg} alt="" />
                           </div>
                           <div className="resources-blog-box-inner">
                             <p>Why Independent Quality Assurance is Essential for Accurate ESG Reports
@@ -414,7 +417,7 @@ return (
                       <div className="custome-column-boxinner">
                         <div className="resources-blog-box">
                           <div className="custome-thumb">
-                            <img src="images/resources/resources-blog-img2.png" alt="" />
+                            <img src={BlogImg2} alt="" />
                           </div>
                           <div className="resources-blog-box-inner">
                             <p>Ways to know if your supplier is disposing plastic properly!</p>
@@ -426,7 +429,7 @@ return (
                       <div className="custome-column-boxinner">
                         <div className="resources-blog-box">
                           <div className="custome-thumb">
-                            <img src="images/resources/resources-blog-img3.png" alt="" />
+                            <img src={BlogImg3} alt="" />
                           </div>
                           <div className="resources-blog-box-inner">
                             <p>What the EU's New Deforestation Law Means for Indian Companies! Key f...
