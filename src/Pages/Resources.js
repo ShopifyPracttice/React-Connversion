@@ -67,7 +67,7 @@ return (
                     <img src={BlogIcon} alt="" />
                     <p>Blogs</p>
                   </div>
-                  <Link to="/resources/cost-management-services" className="custome-btn">
+                  <Link to="/resource/blogs" className="custome-btn">
                     <span className="txt">Explore All</span>
                     <span className="icon"><img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow2} /></span>
                   </Link>
@@ -163,7 +163,7 @@ return (
                     <img src="images/icon/book-icon.png" alt="" />
                     <p>Client Success Stories</p>
                   </div>
-                  <Link to="/resources/cost-management-services" className="custome-btn">
+                  <Link to="/resource/blogs" className="custome-btn">
                     <span className="txt">Explore All</span>
                     <span className="icon"><img className="img-fluid ls-is-cached lazyloaded" src={RightArrow2} alt="logo"  /></span>
                   </Link>
@@ -259,7 +259,7 @@ return (
                     <img src="images/icon/open-book-icon.png" alt="" />
                     <p>eBooks</p>
                   </div>
-                  <Link to="/resources/cost-management-services" className="custome-btn">
+                  <Link to="/resource/blogs" className="custome-btn">
                     <span className="txt">Explore All</span>
                     <span className="icon"><img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow2} /></span>
                   </Link>
@@ -355,7 +355,7 @@ return (
                     <img src="images/icon/newspaper-icon.png" alt="" />
                     <p>Press Releases</p>
                   </div>
-                  <Link to="/resources/cost-management-services" className="custome-btn" >
+                  <Link to="/resource/blogs" className="custome-btn" >
                     <span className="txt">Explore All</span>
                     <span className="icon"><img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow2} /></span>
                   </Link>

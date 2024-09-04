@@ -28,6 +28,7 @@ import Register from './Pages/Register';
 import ContactUs from './Pages/ContactUs';
 import Career from './Pages/Careers';
 import CostManagementServices from './Pages/CostManagementServices';
+import ResourceBlogPage from './Pages/ResourceBlog';
 function App() {
   const [displayForm, setDisplayForm] = useState(false);
   useEffect(() => {
@@ -69,6 +70,7 @@ function App() {
          <Route path='/resources' element={<Resources/>}/>
          <Route path='/contact-us' element={<ContactUs/>}/>
          <Route path='/careers' element={<Career/>}/>
+         <Route path='/resource/blogs' element={<ResourceBlogPage/>}/>
          <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
          {/* <Route path='/modal' element={<ModalComponent/>}/> */}
          <Route path='/career/tech-support-executive' element={<TechElecutive/>}/>

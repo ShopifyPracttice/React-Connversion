@@ -348,7 +348,7 @@ const About = ({setDisplayForm}) =>{
                     <img src={PressIcon} alt="" />
                     <p>Press Releases</p>
                   </div>
-                  <Link to="#" className="custome-btn" target="_blank">
+                  <Link to="/resource/blogs" className="custome-btn" >
                     <span className="txt">Explore All</span>
                     <span className="icon"><img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow2} /></span>
                   </Link>
