@@ -29,7 +29,9 @@ import ContactUs from './Pages/ContactUs';
 import Career from './Pages/Careers';
 import CostManagementServices from './Pages/CostManagementServices';
 import ResourceBlogPage from './Pages/ResourceBlog';
+import SubscribeForm from './components/SubscribeForm';
 function App() {
+  const [isOpen, setIsOpen] = useState(false);
   const [displayForm, setDisplayForm] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
@@ -64,10 +66,10 @@ function App() {
       <BrowserRouter>
        <Header/>
        <Routes>
-         <Route path='/' element={<HomePage setDisplayForm={setDisplayForm}/>}/>
+         <Route path='/' element={<HomePage setDisplayForm={setDisplayForm} setIsOpen={setIsOpen}/>}/>
          <Route path='/about-us' element={<About setDisplayForm={setDisplayForm}/>}/>
          <Route path='/services' element={<Services/>}/>
-         <Route path='/resources' element={<Resources/>}/>
+         <Route path='/resources' element={<Resources setIsOpen={setIsOpen}/>}/>
          <Route path='/contact-us' element={<ContactUs/>}/>
          <Route path='/careers' element={<Career/>}/>
          <Route path='/resource/blogs' element={<ResourceBlogPage/>}/>
@@ -75,7 +77,7 @@ function App() {
          {/* <Route path='/modal' element={<ModalComponent/>}/> */}
          <Route path='/career/tech-support-executive' element={<TechElecutive/>}/>
          <Route path='/resource/client-success-stories' element={<NewLaptop/>}/>
-         <Route path='/press-releases' element={<PressRelease/>}/>
+         <Route path='/press-releases' element={<PressRelease setIsOpen={setIsOpen}/>}/>
          <Route path='/search-details' element={<SearchDetails/>}/>
          <Route path='/social-impact-pledge' element={<SocialImpactPledge/>}/>
          <Route path='/resources/cost-management-services' element={<CostManagementServices/>}/>
@@ -89,6 +91,7 @@ function App() {
        </Routes>
        <Link id="scrollTop" class="scrollTopbtn"><img class="img-fluid lazyload" src={ArrowUp} alt=""/></Link>
         <ModalComponent displayForm={displayForm} setDisplayForm={setDisplayForm}/>
+        <SubscribeForm isOpen={isOpen} setIsOpen={setIsOpen}/>
        <Footer/>
       </BrowserRouter>
     </div>

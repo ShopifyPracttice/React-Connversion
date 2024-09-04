@@ -4,6 +4,7 @@ import SortIcon from "../images/icon/sort-icon.png";
 import ResourceImage2 from "../images/resources/resource-img-two-2.png";
 import ResourcesBlogIcon from "../images/icon/resources-blog-icon.png";
 import OpenBook from "../images/icon/open-book-icon.png";
+import RightArrow2 from "../images/icon/right-arrow-2.svg"
 import NewsPaperIcon from "../images/icon/newspaper-icon.png";
 const ResourceBlogPage = () =>{
 return (
@@ -1426,7 +1427,7 @@ return (
                         <button type="submit" name="submit" className="justify-content-center w-100 custome-btn getInTouchFormBtn">
                           <span className="txt">Get Started</span>
                           <span className="icon">
-                            <img className="img-fluid lazyload" data-src="images/icon/right-arrow-2.svg" alt="logo" />
+                            <img className="img-fluid lazyload" src={RightArrow2} alt="logo" />
                           </span>
                         </button>
                       </div>
@@ -1452,7 +1453,7 @@ return (
                   </h4>
                   <a href="#" className="custome-btn subscribe-btn">
                     <span className="txt">Subscribe Now!</span>
-                    <span className="icon"><img className="img-fluid ls-is-cached lazyloaded" data-src="images/icon/right-arrow-2.svg" alt="logo" src="images/icon/right-arrow-2.svg" /></span>
+                    <span className="icon"><img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow2} /></span>
                   </a>
                 </div>
               </div>

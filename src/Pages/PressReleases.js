@@ -12,7 +12,7 @@ import PressImage2 from "../images/resources/resources-blog-img2.png";
 import PressImage3 from "../images/resources/resources-blog-img3.png";
 
 
-const PressRelease = () =>{
+const PressRelease = ({setIsOpen}) =>{
 return (
   
         <main>
@@ -513,10 +513,10 @@ return (
                   <h4 className="block-title fw-400 mb-30">Subscribe to our newsletter for the latest industry news,
                     insightful<br /> expert analysis,
                     and practical tips—delivered straight to your inbox. </h4>
-                  <a href="#" className="custome-btn subscribe-btn">
+                  <Link to="#" onClick={()=>setIsOpen(true)} className="custome-btn subscribe-btn">
                     <span className="txt">Subscribe Now!</span>
                     <span className="icon"><img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow} /></span>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

@@ -26,7 +26,7 @@ import Client12 from "../images/client/client12.svg";
 import { Link } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
 
-const HomePage = ({setDisplayForm})=>{
+const HomePage = ({setDisplayForm,setIsOpen})=>{
     const [formData, setFormData] = useState({
         full_name: '',
         company_name: '',
@@ -865,7 +865,7 @@ const HomePage = ({setDisplayForm})=>{
                   <h4 className="block-title fw-400 mb-30">Subscribe to our newsletter for the latest industry news,
                     insightful<br /> expert analysis,
                     and practical tips—delivered straight to your inbox. </h4>
-                  <Link to="#" className="custome-btn subscribe-btn">
+                  <Link to="#" onClick={()=>setIsOpen(true)} className="custome-btn subscribe-btn">
                     <span className="txt">Subscribe Now!</span>
                     <span className="icon"><img className="img-fluid lazyload" src={RightArrow2} alt="logo" /></span>
                   </Link>
