@@ -9,7 +9,7 @@ import ChooseIcon2 from "../images/service/choose-icon2.png";
 import ChooseIcon3 from "../images/service/choose-icon3.png";
 import ChooseIcon4 from "../images/service/choose-icon4.png";
 import TouchLogo from "../images/bg/getInTouch-bg.webp";
-const Reporting = () =>{
+const Reporting = ({setDisplayForm}) =>{
       return (
   
         <main>
@@ -395,7 +395,7 @@ const Reporting = () =>{
                 </div>
                 <div className="meet-bottom pt-0">
                   <p className="sm-pl-20 sm-pr-20 mb-30">Set up a <strong>free 15-minute call</strong> with our consultants to get started</p>
-                  <Link to="#" className="custome-btn" target="_blank">
+                  <Link to="#" onClick={()=>setDisplayForm(true)} className="custome-btn">
                     <span className="txt">Contact Us</span>
                     <span className="icon"><img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow2} /></span>
                   </Link>
@@ -611,7 +611,7 @@ const Reporting = () =>{
                 <h3 className="block-title white-txt-color fw-400 title">Ready to Make a Positive Impact?</h3>
                 <p className="white-txt-color mb-20">Your commitment to a better world inspires us.<br />
                   Partner with us and let's amplify your impact together.</p>
-                <Link to="/contact-us" className="custome-btn" target="_blank">
+                <Link to="/contact-us" className="custome-btn">
                   <span className="txt">Get Started</span>
                   <span className="icon"><img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow2} /></span>
                 </Link>

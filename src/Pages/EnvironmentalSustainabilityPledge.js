@@ -8,7 +8,7 @@ const EnvironmentalSustanabilityPledge = () =>{
               <div className="Pledge-inner">
                 <div className="pledge-inner-box">
                   <div className="Pledge-inner-img">
-                    <img src={PledgeLogo} className="img-fluid" alt="" />
+                    {/* <img src={PledgeLogo} className="img-fluid" alt="" /> */}
                   </div>
                   <h2 style={{fontWeight: '600'}}>Environmental Sustainability Pledge</h2>
                 </div>

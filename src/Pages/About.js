@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 import CareerImage1 from "../images/career/leadership-img1.png";
+import GreenLocation from "../images/career/green-location.png";
+import PurpalLocation from "../images/career/parpal-location.png";
 import LinkedInLogo1 from "../images/icon/linkedin-2.png";
 import CareerImage2 from "../images/career/leadership-img2.png";
 import CareerImage3 from "../images/career/leadership-img3.png";
 import CareerImage4 from "../images/career/leadership-img4.png";
 import CareerImage5 from "../images/career/leadership-img5.png";
 import Slider from 'react-slick';
-import LeftIcon from "../images/icon/left-angle.svg";
-import RightIcon from "../images/icon/right-angle.svg";
 import WorldMap from "../images/career/map.png";
 import ResourceBlog from "../images/resources/resources-blog-img.png";
 import ResourceBlog2 from "../images/resources/resources-blog-img2.png";
@@ -24,15 +24,15 @@ const About = () =>{
         dots: false,  // No bullets
         infinite: true,
         speed: 500,
-        slidesToShow: 3, // Number of slides to show at once
-        slidesToScroll: 1,
-        prevArrow: <button className="prev-btn"><img src={LeftIcon} alt="Prev" /></button>,
-        nextArrow: <button className="next-btn"><img src={RightIcon} alt="Next" /></button>,
+        slidesToShow: 5, // Number of slides to show at once
+        slidesToScroll: 2,
+        prevArrow: null,
+        nextArrow: null,
         responsive: [
           {
             breakpoint: 1024, // Screen width less than 1024px
             settings: {
-              slidesToShow: 2,
+              slidesToShow: 3,
             },
           },
           {
@@ -325,9 +325,9 @@ const About = () =>{
                     <div className="world-map-left">
                       <h2>A World of<br /> Experience</h2>
                       <ul>
-                        <li><img src="images/career/green-location.png" alt="" />VECTRA In-Country Presence
+                        <li><img src={GreenLocation} alt="ss" />VECTRA In-Country Presence
                         </li>
-                        <li><img src="images/career/parpal-location.png" alt="" />VECTRA Coverage</li>
+                        <li><img src={PurpalLocation} alt="" />VECTRA Coverage</li>
                       </ul>
                     </div>
                   </div>

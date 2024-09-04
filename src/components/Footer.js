@@ -127,6 +127,12 @@ const Footer = ()=>{
                       {/*		<option>Choose Region</option>*/}
                       {/*	</select>*/}
                       {/*</div>*/}
+                      <div className="footerRegionBox">
+        <span className="icon"><img className="img-fluid lazyloaded" data-src="https://vectra.kidzz.in/backup_full/images/icon/glob-icon.svg" alt="" src="https://vectra.kidzz.in/backup_full/images/icon/glob-icon.svg" /></span>
+        <select className="form-select">
+          <option>Choose Region</option>
+        </select>
+      </div>
                       <ul className="footerUseFulLinks">
                         {/*<li><a href="#">Terms & Conditions</a></li>*/}
                         <li><Link to="/cookie-policy">Cookie Policy</Link></li>

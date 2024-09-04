@@ -9,7 +9,7 @@ import ChooseIcon3 from "../images/service/choose-icon3.png";
 import ChooseIcon4 from "../images/service/choose-icon4.png";
 import ImpactBackground from "../images/bg/getInTouch-bg.webp";
 import MobileBanner from "../images/service/independent-quality-assurance-banner-mobile.png";
-const IndependentQualityAssurance = ()=>{
+const IndependentQualityAssurance = ({setDisplayForm})=>{
       return (
   
         <main>
@@ -306,7 +306,7 @@ const IndependentQualityAssurance = ()=>{
                 </div>
                 <div className="meet-bottom pt-0">
                   <p className="sm-pl-20 sm-pr-20 mb-30">Set up a <strong>free 15-minute call</strong> with our consultants to get started</p>
-                  <Link to="#" className="custome-btn" target="_blank">
+                  <Link to="#" onClick={()=>setDisplayForm(true)} className="custome-btn">
                     <span className="txt">Contact Us</span>
                     <span className="icon"><img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={ArrowRight2} /></span>
                   </Link>

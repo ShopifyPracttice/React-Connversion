@@ -25,6 +25,9 @@ import NewLaptop from './Pages/NewLaptop';
 import SearchDetails from './Pages/SearchDetails';
 import ModalComponent from './components/Modal';
 import Register from './Pages/Register';
+import ContactUs from './Pages/ContactUs';
+import Career from './Pages/Careers';
+import CostManagementServices from './Pages/CostManagementServices';
 function App() {
   const [displayForm, setDisplayForm] = useState(false);
   useEffect(() => {
@@ -64,6 +67,8 @@ function App() {
          <Route path='/about-us' element={<About/>}/>
          <Route path='/services' element={<Services/>}/>
          <Route path='/resources' element={<Resources/>}/>
+         <Route path='/contact-us' element={<ContactUs/>}/>
+         <Route path='/careers' element={<Career/>}/>
          <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
          {/* <Route path='/modal' element={<ModalComponent/>}/> */}
          <Route path='/career/tech-support-executive' element={<TechElecutive/>}/>
@@ -71,12 +76,13 @@ function App() {
          <Route path='/press-releases' element={<PressRelease/>}/>
          <Route path='/search-details' element={<SearchDetails/>}/>
          <Route path='/social-impact-pledge' element={<SocialImpactPledge/>}/>
+         <Route path='/resources/cost-management-services' element={<CostManagementServices/>}/>
          <Route path='/register' element={<Register/>}/>
-         <Route path='/service-detail/training' element={<Training/>}/>
+         <Route path='/service-detail/training' element={<Training setDisplayForm={setDisplayForm}/>}/>
          <Route path='/environmental-sustainability-pledge' element={<EnvironmentalSustanabilityPledge/>}/>
-         <Route path='/service-detail/reporting' element={<Reporting/>}/>
+         <Route path='/service-detail/reporting' element={<Reporting setDisplayForm={setDisplayForm}/>}/>
          <Route path='/service-detail/current-situation-analysis' element={<CurrentSituationAnalysis setDisplayForm={setDisplayForm}/>}/>
-         <Route path='/service-detail/independent-quality-assurance' element={<IndependentQualityAssurance/>}/>
+         <Route path='/service-detail/independent-quality-assurance' element={<IndependentQualityAssurance setDisplayForm={setDisplayForm}/>}/>
          <Route path='/service-detail/site-performance-improvement' element={<SitePerformanceImprovement/>}/>
        </Routes>
        <Link id="scrollTop" class="scrollTopbtn"><img class="img-fluid lazyload" src={ArrowUp} alt=""/></Link>

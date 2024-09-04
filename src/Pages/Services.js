@@ -13,7 +13,7 @@ const Services = () =>{
       return (
   
         <main>
-          <section className="service-top pt-40 serviceListingSec" style={{paddingTop: '40px'}}>
+          <section className="service-top pt-40 serviceListingSec" style={{paddingTop: '40px', background:'#227B2C', color:'white'}}>
             <div className="container">
               <div className="service-top-inner">
                 <h1 className="mav-20 fw-400 block-title">Your Trusted Partner for<br /> End-to-End ESG Solutions</h1>
