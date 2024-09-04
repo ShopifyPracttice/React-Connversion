@@ -64,7 +64,7 @@ function App() {
        <Header/>
        <Routes>
          <Route path='/' element={<HomePage setDisplayForm={setDisplayForm}/>}/>
-         <Route path='/about-us' element={<About/>}/>
+         <Route path='/about-us' element={<About setDisplayForm={setDisplayForm}/>}/>
          <Route path='/services' element={<Services/>}/>
          <Route path='/resources' element={<Resources/>}/>
          <Route path='/contact-us' element={<ContactUs/>}/>

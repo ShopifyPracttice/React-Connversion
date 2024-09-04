@@ -225,7 +225,7 @@ return (
               <div className="homeSubscribeSecinner">
                 <div className="text-center homeSubscribeContent">
                   <div className="icon mb-25">
-                    <img className="img-fluid lazyloaded" data-src="https://apexxcapital.co/images/icon/newsletter-icon.svg" alt="logo" src="https://apexxcapital.co/images/icon/newsletter-icon.svg" />
+                    <img className="img-fluid lazyloaded"  alt="logo" src="https://apexxcapital.co/images/icon/newsletter-icon.svg" />
                   </div>
                   <h4 className="block-title fw-400 mb-30">
                     Subscribe to our newsletter for the latest industry news, insightful<br />

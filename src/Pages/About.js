@@ -19,7 +19,7 @@ import VectraImage from "../images/vectra/vectra-img.png";
 import PressIcon from "../images/icon/press-icon.png";
 
 
-const About = () =>{
+const About = ({setDisplayForm}) =>{
     const settings = {
         dots: false,  // No bullets
         infinite: true,
@@ -392,10 +392,10 @@ const About = () =>{
                   <div className="vectra-join-us-wrapper">
                     <p className="block-title">From strategy to transformation,<br /> we help businesses thrive. Get the<br /> support you need.</p>
                     <div className="vectra-join-us-right">
-                      <a href="#getInTouch" className="custome-btn">
+                      <Link to="#" onClick={()=>setDisplayForm(true)} className="custome-btn">
                         <span className="txt">Contact Us</span>
                         <span className="icon"><img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow2} /></span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -406,10 +406,10 @@ const About = () =>{
                   <div className="vectra-join-us-wrapper">
                     <p className="block-title">Want to make a positive<br /> impact?</p>
                     <div className="vectra-join-us-right">
-                      <a href="#getInTouch" className="custome-btn">
+                      <Link to="#" onClick={()=>setDisplayForm(true)} className="custome-btn">
                         <span className="txt">Join Us</span>
                         <span className="icon"><img className="img-fluid ls-is-cached lazyloaded" alt="logo" src={RightArrow2} /></span>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
