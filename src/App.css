@@ -4768,7 +4768,7 @@ fieldset:disabled .btn {
 }
 
 .dropdown-menu {
-    --bs-dropdown-min-width: 10rem;
+    --bs-dropdown-min-width: 90px;
     --bs-dropdown-padding-x: 0;
     --bs-dropdown-padding-y: 0.5rem;
     --bs-dropdown-spacer: 0.125rem;
@@ -13758,11 +13758,11 @@ a{
     display: flex;
     align-items: center;
     background-color: white;
-    border: 1px solid #ccc;
+    border: 1px solid #222;
     padding: 5px 10px;
     border-radius: 5px;
     cursor: pointer;
-    width: 150px;
+    width: 90px;
   }
   
   .selected-flag {

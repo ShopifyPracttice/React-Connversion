@@ -51,8 +51,8 @@ const Header = () =>{
                   <Link className="navbar-brand" to='/'>
                     <img className="img-fluid lazyload" src={logo} alt="logo" />
                   </Link>
-                  <div className="language-selector">
-      <button onClick={toggleDropdown} className="dropdown-btn">
+                  <div className="language-selector" >
+      <button onClick={toggleDropdown} className="dropdown-btn" style={{width:'90px'}}>
         <img src={selectedLanguage.flag} alt={selectedLanguage.code} className="selected-flag" />
         <span className="selected-language">{selectedLanguage.code}</span>
         <span className="arrow-down" />
