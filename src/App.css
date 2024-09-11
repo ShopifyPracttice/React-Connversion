@@ -4,7 +4,10 @@
 ::after, ::before {box-sizing: border-box;}
 a { text-decoration: none; color: rgba(34, 123, 44, 1);}
 a:hover, a:focus, button:focus, input:focus {text-decoration: none; outline: none;}
-body {background-color: #fff; font-size: 18px; line-height: 30px; color: rgba(9, 37, 67, 1); font-family: "Poppins", sans-serif; font-weight: 400;}
+body {background-color: #fff;
+     font-size: 18px; 
+     line-height: 30px; 
+     color: rgba(9, 37, 67, 1); font-family: "Poppins", sans-serif; font-weight: 400;}
 h4 { font-size: 18px; font-weight: 700; margin: 0 0 20px;}
 .fw-300 {font-weight: 300;}
 .fw-400 {font-weight: 400;}
