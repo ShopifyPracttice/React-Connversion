@@ -175,7 +175,7 @@ const About = ({setDisplayForm}) =>{
                 <h4 className="leadership-name">Patrick Neyts</h4>
                 <span className="d-block mb-10 designation">CEO / Strategic Advisor</span>
                 <p>Patrick Neyts is the Chief Executive Officer of VECTRA International, with over 30 years of experience in ESG programs, Corporate Codes, and Responsible Business practices across 11 industry sectors and 40 countries.</p>
-                <ul className="leader-ship-social-links">
+                <ul className="leader-ship-social-links" style={{marginTop:'46px'}}>
                   <li><a href="#"><img src={LinkedInLogo1} alt="LinkedIn" className="linkdin-img" /></a></li>
                 </ul>
               </div>
@@ -199,7 +199,7 @@ const About = ({setDisplayForm}) =>{
                       <p>Shalini Saini is the Head of Marketing &amp; Communications at VECTRA International, with
                         over 15 years of public relations experience in the hospitality industry, leveraging
                         her dynamic leadership skills and business acumen from New Delhi, India.</p>
-                      <ul className="leader-ship-social-links">
+                      <ul className="leader-ship-social-links" style={{marginTop:'10px'}}>
                         <li><Link to="#"><img src={LinkedInLogo1} alt="" className="linkdin-img" /></Link></li>
                       </ul>
                     </div>
@@ -213,7 +213,7 @@ const About = ({setDisplayForm}) =>{
                         Brazil, with a focus on sustainability strategy, human rights, and social
                         compliance, backed by 20 years of consultancy experience and a background in law.
                       </p>
-                      <ul className="leader-ship-social-links">
+                      <ul className="leader-ship-social-links" style={{marginTop:'13px'}}>
                         <li><Link to="#"><img src={LinkedInLogo1} alt="" className="linkdin-img" /></Link></li>
                       </ul>
                     </div>
@@ -227,7 +227,7 @@ const About = ({setDisplayForm}) =>{
                         professional with over 10 years of experience in software consulting for telecom,
                         banks, and finance sectors in Turkey, leading the development of innovative
                         cloud-based platforms.</p>
-                      <ul className="leader-ship-social-links">
+                      <ul className="leader-ship-social-links" style={{marginTop:"14px"}}>
                         <li><Link to="#"><img src={LinkedInLogo1} alt="" className="linkdin-img" /></Link></li>
                       </ul>
                     </div>

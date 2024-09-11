@@ -420,7 +420,7 @@ input::-webkit-inner-spin-button { -webkit-appearance: none;  margin: 0;}
 .leadership-slider .slick-track{ display: flex;}
 .leadership-slider .leadership-box { height: auto; display: flex;flex-direction: column;}
 .leader-ship-inner { background: #fff; border-radius: 12px;  box-shadow: 0 2px 15px 0 rgb(0, 0, 0, 0.2);  padding: 16px;}
-.leadership-slider .leader-ship-inner{height: 550px; display: flex;flex-direction: column;}
+.leadership-slider .leader-ship-inner{height: 540px; display: flex;flex-direction: column;}
 .leader-ship-inner img { width: 100%; margin-bottom: 20px;}
 .leader-ship-inner h4 { font-size: 20px; line-height: 28px;  margin-bottom: 0px;  font-weight: 400;}
 .leader-ship-inner span {font-weight: 400; font-size: 14px; line-height: 20px;display: block;margin-bottom: 10px;}

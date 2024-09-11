@@ -78,12 +78,12 @@ return (
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src={BlogImg} alt=""/>
+                                              <img src="https://fffmestb.blob.core.windows.net/vectracs/resources/{post-2024-12-27 06:12:11-RESOURCE-x}/image01.jpg" alt=""/>
                                           </div>
-                                          <div class="resources-blog-box-inner">
+                                          {/* <div class="resources-blog-box-inner">
                                               <p>Why Independent Quality Assurance is Essential for Accurate ESG Reports
                                               </p>
-                                          </div>
+                                          </div> */}
                                       </div>
                                   </div>
                               </div>
@@ -91,11 +91,11 @@ return (
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src={BlogImg2} alt=""/>
+                                              <img src="https://fffmestb.blob.core.windows.net/vectracs/resources/{post-2023-37-28 08:37:53-RESOURCE-x}/image01.jpg" alt=""/>
                                           </div>
-                                          <div class="resources-blog-box-inner">
+                                          {/* <div class="resources-blog-box-inner">
                                               <p>Ways to know if your supplier is disposing plastic properly!</p>
-                                          </div>
+                                          </div> */}
                                       </div>
                                   </div>
                               </div>
@@ -103,12 +103,12 @@ return (
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src={BlogImg3} alt=""/>
+                                              <img src="https://fffmestb.blob.core.windows.net/vectracs/resources/{post-2024-12-01 06:12:42-RESOURCE-x}/image01.jpg" alt=""/>
                                           </div>
-                                          <div class="resources-blog-box-inner">
+                                          {/* <div class="resources-blog-box-inner">
                                               <p>What the EU's New Deforestation Law Means for Indian Companies! Key f...
                                               </p>
-                                          </div>
+                                          </div> */}
                                       </div>
                                   </div>
                               </div>
@@ -116,12 +116,12 @@ return (
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src={BlogImg} alt=""/>
+                                              <img src="https://fffmestb.blob.core.windows.net/vectracs/resources/{post-2024-40-04 02:40:18-RESOURCE-x}/image01.jpg" alt=""/>
                                           </div>
-                                          <div class="resources-blog-box-inner">
+                                          {/* <div class="resources-blog-box-inner">
                                               <p>Why Independent Quality Assurance is Essential for Accurate ESG Reports
                                               </p>
-                                          </div>
+                                          </div> */}
                                       </div>
                                   </div>
                               </div>
@@ -129,11 +129,11 @@ return (
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src={BlogImg2} alt=""/>
+                                              <img src="https://fffmestb.blob.core.windows.net/vectracs/resources/{post-2024-02-16 08:02:36-RESOURCE-x}/image01.jpg" alt=""/>
                                           </div>
-                                          <div class="resources-blog-box-inner">
+                                          {/* <div class="resources-blog-box-inner">
                                               <p>Ways to know if your supplier is disposing plastic properly!</p>
-                                          </div>
+                                          </div> */}
                                       </div>
                                   </div>
                               </div>
@@ -141,12 +141,12 @@ return (
                                   <div class="custome-column-boxinner">
                                       <div class="resources-blog-box">
                                           <div class="custome-thumb">
-                                              <img src={BlogImg3} alt=""/>
+                                              <img src="https://fffmestb.blob.core.windows.net/vectracs/resources/{post-2024-37-01 09:37:56-RESOURCE-x}/image01.jpg" alt=""/>
                                           </div>
-                                          <div class="resources-blog-box-inner">
+                                          {/* <div class="resources-blog-box-inner">
                                               <p>What the EU's New Deforestation Law Means for Indian Companies! Key f...
                                               </p>
-                                          </div>
+                                          </div> */}
                                       </div>
                                   </div>
                               </div>
