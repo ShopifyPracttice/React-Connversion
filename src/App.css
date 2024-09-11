@@ -5320,8 +5320,8 @@ fieldset:disabled .btn {
 
 .nav-pills .nav-link.active,
 .nav-pills .show>.nav-link {
-    color: var(--bs-nav-pills-link-active-color);
-    background-color: var(--bs-nav-pills-link-active-bg)
+    /* color: var(--bs-nav-pills-link-active-color); */
+    /* background-color: var(--bs-nav-pills-link-active-bg) */
 }
 
 .nav-fill .nav-item,
