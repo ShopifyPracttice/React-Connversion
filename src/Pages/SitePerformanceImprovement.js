@@ -1,4 +1,6 @@
+import { useState, useEffect, useRef } from "react";
 import ArrowRight2 from "../images/icon/right-arrow-2.svg";
+import ArrowRight from "../images/icon/right-arrow.svg";
 import Meet from "../images/service/meet-img.png";
 import ImpactBackground from "../images/bg/getInTouch-bg.webp";
 import ChooseIcon from "../images/service/choose-icon.png";
@@ -9,10 +11,33 @@ import { Link } from "react-router-dom";
 import SitePerformanceImprovements from "../images/service/site-performance-improvement-banner.png";
 import MobileSite from "../images/service/site-performance-improvement-banner-mobile.png";
 const SitePerformanceImprovement = ()=>{
+  const elementRef = useRef(null);
+  const [isHidden, setIsHidden] = useState(false);
+  const [selectDropDown, setSelectedDropDown] = useState("CAP");
+  const [displayDropDown, setDisplayDropDown] = useState(false);
+  useEffect(() => {
+    const handleResize = () => {
+      if (elementRef.current) {
+        const width = elementRef.current.offsetWidth;
+        setIsHidden(width <= 574);
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener for resize
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
       return (
-          <main>
+          <main ref={elementRef}>
           <section className="service-details-banner" style={{background: `url(${SitePerformanceImprovements}) no-repeat center center/cover`}}>
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="homePageBannerSecinner">
                 <div className="homePageBannerContent">
                   <h1 className="fw-300 mb-20">Site Performance<br /> Improvement</h1>
@@ -32,7 +57,7 @@ const SitePerformanceImprovement = ()=>{
             </div>
           </section>
           <section className="meet-sec pt-30">
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="meet-inner-sec">
                 <div className="meet-inner-header-sec">
                   <h3 className="mav-20 fw-400 block-title">We can help your<br /> organization meet</h3>
@@ -42,10 +67,10 @@ const SitePerformanceImprovement = ()=>{
                     <div className="meet-left">
                       <div className="d-flex align-items-start">
                         <div className="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                          <button className="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#tabOne" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Corrective Action Plan (CAP) <img className="img-fluid lazyload"  alt="logo" src={ArrowRight2} /></button>
-                          <button className="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#tabTwo" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Management Assistance Program  (MAP) <img className="img-fluid lazyload"  alt="logo" src={ArrowRight2} /></button>
-                          <button className="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#tabthree" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Management Systems <img className="img-fluid lazyload"  alt="logo" src={ArrowRight2} /></button>
-                          <button className="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#tabFour" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Training for Workers and Management <img className="img-fluid lazyload"  alt="logo" src={ArrowRight2} /></button>
+                          <button className="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#tabOne" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Corrective Action Plan (CAP) <img className="img-fluid lazyload"  alt="logo" src={ArrowRight} /></button>
+                          <button className="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#tabTwo" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Management Assistance Program  (MAP) <img className="img-fluid lazyload"  alt="logo" src={ArrowRight} /></button>
+                          <button className="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#tabthree" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Management Systems <img className="img-fluid lazyload"  alt="logo" src={ArrowRight} /></button>
+                          <button className="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#tabFour" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Training for Workers and Management <img className="img-fluid lazyload"  alt="logo" src={ArrowRight} /></button>
                         </div>
                       </div>
                     </div>
@@ -53,16 +78,16 @@ const SitePerformanceImprovement = ()=>{
                   <div className="col-lg-6">
                     <div className="meet-right">
                       <div className="tab-content meet-accordian" id="v-pills-tabContent">
-                        <div className="tab-pane fade show active meet-accordian-item curent" id="tabOne" role="tabpanel" aria-labelledby="v-pills-home-tab" tabIndex={0}>
+                        <div className={`tab-pane fade show active meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "CAP"?"curent":""} `} id="tabOne" role="tabpanel" aria-labelledby="v-pills-home-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("CAP"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>Corrective Action Plan (CAP)</h4>
                             </div>
                             <div className="meet-accordian-body">
                               <p>We provide cost-effective support to your sites with tailor-made, systemic corrective action
                                 plans following certification or compliance audits.</p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-1" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
@@ -96,16 +121,16 @@ const SitePerformanceImprovement = ()=>{
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabTwo" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item" id="tabTwo" role="tabpanel `} aria-labelledby="v-pills-profile-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" >
                               <h4>Management Assistance Program  (MAP)</h4>
                             </div>
                             <div className="meet-accordian-body">
                               <p>We provide site-specific support to enable optimal ESG performance through systems, site culture,
                                 and capability building of the organizational structure and site management team.</p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-2" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
@@ -139,16 +164,16 @@ const SitePerformanceImprovement = ()=>{
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabthree" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "MAP"?"curent":""}`} id="tabthree" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
-                              <h4>Management Systems</h4>
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("MAP"); setDisplayDropDown(!displayDropDown)}}>
+                              <h4>Management Systems </h4>
                             </div>
                             <div className="meet-accordian-body">
                               <p>We implement cost-effective and efficient ESG policies, procedures, and work instructions to help
                                 you meet compliance requirements, targets, and goals.</p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-3" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
@@ -182,16 +207,16 @@ const SitePerformanceImprovement = ()=>{
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabFour" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "TWM"?"curent":""}`} id="tabFour" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("TWM"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>Training for Workers and Management</h4>
                             </div>
                             <div className="meet-accordian-body">
                               <p>We empower workers and managers to perform better by increasing their knowledge of ESG, EHS, social
                                 requirements and processes... </p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-4" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">

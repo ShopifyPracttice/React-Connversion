@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Analysis from "../images/service/service-details-bg.png";
 import RightArrow2 from "../images/icon/right-arrow-2.svg";
@@ -11,10 +12,35 @@ import ChooseIcon4 from "../images/service/choose-icon4.png";
 import TouchLogo from "../images/bg/getInTouch-bg.webp";
 
 const CurrentSituationAnalysis = ({setDisplayForm})=>{
+  const elementRef = useRef(null);
+  const [isHidden, setIsHidden] = useState(false);
+  const [selectDropDown, setSelectedDropDown] = useState("AD");
+  const [displayDropDown, setDisplayDropDown] = useState(false);
+   
+   
+  useEffect(() => {
+      const handleResize = () => {
+        if (elementRef.current) {
+          const width = elementRef.current.offsetWidth;
+          setIsHidden(width <= 574);
+        }
+      };
+  
+      // Initial check
+      handleResize();
+  
+      // Add event listener for resize
+      window.addEventListener('resize', handleResize);
+  
+      // Clean up event listener on component unmount
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
       return (
-        <main>
+        <main ref={elementRef}>
           <section className="service-details-banner" style={{background: `url(${Analysis}) no-repeat center center/cover`}}>
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="homePageBannerSecinner">
                 <div className="homePageBannerContent">
                   <h1 className="fw-300 mb-20">Current Situation <br /> Analysis &amp; Reporting</h1>
@@ -34,7 +60,7 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
             </div>
           </section>
           <section className="meet-sec pt-30">
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="meet-inner-sec">
                 <div className="meet-inner-header-sec">
                   <h3 className="mav-20 fw-400 block-title">We can help your<br /> organization meet</h3>
@@ -61,9 +87,9 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
                   <div className="col-lg-6">
                     <div className="meet-right">
                       <div className="tab-content meet-accordian" id="v-pills-tabContent">
-                        <div className="tab-pane fade show active meet-accordian-item curent" id="tabOne" role="tabpanel" aria-labelledby="v-pills-home-tab" tabIndex={0}>
+                        <div className={`tab-pane fade show active meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "AD"?"curent":""}`} id="tabOne" role="tabpanel" aria-labelledby="v-pills-home-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("AD"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>Audit Requirements of a Compliance Standard</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -71,7 +97,7 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
                                 exceed compliance codes of conduct and audits, such as RBA, ICS, FLA,
                                 ESCP, amfori BSCI/BEPI, FWF, SMETA...</p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-1" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
@@ -105,17 +131,17 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabTwo" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "CR"?"curent":""}`} id="tabTwo" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("CR"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>Certification Requirements</h4>
                             </div>
                             <div className="meet-accordian-body">
-                              <p>We offer cost-effective support to prepare your facility to meet and
-                                exceed compliance codes of conduct and audits, such as RBA, ICS, FLA,
-                                ESCP, amfori BSCI/BEPI, FWF, SMETA...</p>
+                              <p>
+                              We offer in-depth support to enable your organization to achieve certification standards, such as ISO, IRMA, SA8000, WRAP, GK...
+                              </p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-2" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
@@ -149,17 +175,19 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabthree" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "CPLR"?"curent":""}`} id="tabthree" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("CPLR"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>Current and/or Proposed Legal Requirements</h4>
                             </div>
                             <div className="meet-accordian-body">
-                              <p>We offer cost-effective support to prepare your facility to meet and
-                                exceed compliance codes of conduct and audits, such as RBA, ICS, FLA,
-                                ESCP, amfori BSCI/BEPI, FWF, SMETA...</p>
+                              <p>
+                              We help you meet current legal requirements and prepare for anticipated new ones in your
+                                                countries of operation, target countries, or countries within your supply chain. For instance,
+                                                EUDR, CSDDD, LkSG, NTA, CSRD/ESRS, UFLPA, Modern Slavery Acts...
+                              </p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-3" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
@@ -193,17 +221,18 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabFour" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "ESG"?"curent":""}`} id="tabFour" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("ESG"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>Company ESG Targets and Reporting Commitments</h4>
                             </div>
                             <div className="meet-accordian-body">
-                              <p>We offer cost-effective support to prepare your facility to meet and
-                                exceed compliance codes of conduct and audits, such as RBA, ICS, FLA,
-                                ESCP, amfori BSCI/BEPI, FWF, SMETA...</p>
+                              <p>
+                              We provide support to help you meet your short- and long-term ESG targets and commitments,
+                              such as GHG net-zero, supplier ESG performance, and working hours in workplaces.
+                              </p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-4" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
@@ -237,17 +266,17 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabFive" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "YCR"?"curent":""}`} id="tabFive" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("YCR"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>Your Customer Requirements</h4>
                             </div>
                             <div className="meet-accordian-body">
-                              <p>We offer cost-effective support to prepare your facility to meet and
-                                exceed compliance codes of conduct and audits, such as RBA, ICS, FLA,
-                                ESCP, amfori BSCI/BEPI, FWF, SMETA...</p>
+                              <p>
+                              We enable you to effectively and efficiently implement your customers' ESG requirements in your operations, such as working hours, no forced labor, no child labor...
+                              </p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-5" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
@@ -296,7 +325,7 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
             </div>
           </section>
           <section className="homeSubscribeSec why-choose-sec pt-80 pb-30">
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="why-choose-inner">
                 <div className="why-choose-inner-header-sec">
                   <h3 className="block-title fw-400 mb-10">Why Choose<br /> VECTRA International?</h3>

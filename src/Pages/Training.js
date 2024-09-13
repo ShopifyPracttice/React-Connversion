@@ -14,7 +14,7 @@ return (
   
         <main>
           <section className="service-details-banner" style={{background: `url(${TrainingBackground}) no-repeat center center/cover`}}>
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="homePageBannerSecinner">
                 <div className="homePageBannerContent">
                   <h1 className="fw-300 mb-20">Training</h1>
@@ -33,7 +33,7 @@ return (
             </div>
           </section>
           <section className="meet-sec pt-30">
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="meet-inner-sec">
                 <div className="meet-inner-header-sec">
                   <h3 className="mav-20 fw-400 block-title">We can help your<br /> organization meet</h3>
@@ -48,7 +48,7 @@ return (
                           <button className="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#tabthree" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">ESG Standards and Implementation <img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow} /></button>
                           <button className="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#tabFour" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Legal and Code of Conduct Requirements <img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow} /></button>
                           <button className="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#tabFive" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Reporting <img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow} /></button>
-                          <button className="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#tabSix" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Worker Management Dialogue <img className="img-fluid ls-is-cached lazyloaded" data-src={RightArrow} alt="logo" src="<?=$base_url?>images/icon/right-arrow.svg" /></button>    
+                          <button className="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#tabSix" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Worker Management Dialogue <img className="img-fluid ls-is-cached lazyloaded" src={RightArrow} alt="logo" /></button>    
                         </div>
                       </div>
                     </div>

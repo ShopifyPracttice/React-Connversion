@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import BackgroundService from "../images/service/independent-quality-assurance.png";
 import ArrowRight2 from "../images/icon/right-arrow-2.svg";
@@ -10,11 +11,36 @@ import ChooseIcon4 from "../images/service/choose-icon4.png";
 import ImpactBackground from "../images/bg/getInTouch-bg.webp";
 import MobileBanner from "../images/service/independent-quality-assurance-banner-mobile.png";
 const IndependentQualityAssurance = ({setDisplayForm})=>{
+  const elementRef = useRef(null);
+    const [isHidden, setIsHidden] = useState(false);
+    const [selectDropDown, setSelectedDropDown] = useState("RQA");
+    const [displayDropDown, setDisplayDropDown] = useState(false);
+     
+     
+    useEffect(() => {
+        const handleResize = () => {
+          if (elementRef.current) {
+            const width = elementRef.current.offsetWidth;
+            setIsHidden(width <= 574);
+          }
+        };
+    
+        // Initial check
+        handleResize();
+    
+        // Add event listener for resize
+        window.addEventListener('resize', handleResize);
+    
+        // Clean up event listener on component unmount
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
       return (
   
-        <main>
+        <main ref={elementRef}>
           <section className="service-details-banner" style={{background: `url(${BackgroundService}) no-repeat center center/cover`}}>
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="homePageBannerSecinner">
                 <div className="homePageBannerContent">
                   <h1 className="fw-300 mb-20">Independent Quality<br /> Assurance</h1>
@@ -34,7 +60,7 @@ const IndependentQualityAssurance = ({setDisplayForm})=>{
             </div>
           </section>
           <section className="meet-sec pt-30">
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="meet-inner-sec">
                 <div className="meet-inner-header-sec">
                   <h3 className="mav-20 fw-400 block-title">We can help your<br /> organization meet</h3>
@@ -55,16 +81,16 @@ const IndependentQualityAssurance = ({setDisplayForm})=>{
                   <div className="col-lg-6">
                     <div className="meet-right">
                       <div className="tab-content meet-accordian" id="v-pills-tabContent">
-                        <div className="tab-pane fade show active meet-accordian-item curent" id="tabOne" role="tabpanel" aria-labelledby="v-pills-home-tab" tabIndex={0}>
+                        <div className={`tab-pane fade show active meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "RQA"?"curent":""}`} id="tabOne" role="tabpanel" aria-labelledby="v-pills-home-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("RQA"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>Report Quality Assurance</h4>
                             </div>
                             <div className="meet-accordian-body">
                               <p>We assure the quality of your reports (audit reports or other) through review, verification,
                                 and evaluation against reporting standards and criteria.</p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-1" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
@@ -98,16 +124,16 @@ const IndependentQualityAssurance = ({setDisplayForm})=>{
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabTwo" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "PM"?"curent":""}`} id="tabTwo" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("PM"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>Program Management</h4>
                             </div>
                             <div className="meet-accordian-body">
                               <p>We provide expert support to independently and cost-effectively manage your programs and third
                                 parties, such as social compliance, ESG compliance, CAP programs, traceability programs...</p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-2" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
@@ -141,16 +167,16 @@ const IndependentQualityAssurance = ({setDisplayForm})=>{
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabthree" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "HD"?"curent":""}`} id="tabthree" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("HD"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>Helpdesk</h4>
                             </div>
                             <div className="meet-accordian-body">
                               <p>We offer standalone expert helpdesk services for your programs, such as code of conduct implementation,
                                 social compliance, ESG compliance, audits, CAP...</p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-3" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
@@ -184,16 +210,16 @@ const IndependentQualityAssurance = ({setDisplayForm})=>{
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabFour" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "PAC"?"curent":""}`} id="tabFour" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("PAC"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>Public Assurance of Reports and Claims</h4>
                             </div>
                             <div className="meet-accordian-body">
                               <p>We provide independent detailed verification, assurance, and review of ESG and sustainability statements,
                                 claims, and report accuracy, such as Better Cotton, sustainability claims, CSDDD reports, sustainability reports...</p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-4" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">

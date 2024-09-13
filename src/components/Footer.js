@@ -13,7 +13,7 @@ const Footer = ()=>{
   
         <footer className="footer">
           <div className="footer_top">
-            <div className="container">
+            <div className="container" style={{maxWidth:"95%"}}>
               <div className="row rowBox">
                 <div className="col-xxl-3 col-xl-3 col-lg-3 col-md-12 columnBox mb-20">
                   <div className="mb-10 footerLogo">
@@ -110,7 +110,7 @@ const Footer = ()=>{
            </div>
            */}
           <div className="footer_bottom">
-            <div className="container">
+            <div className="container" style={{maxWidth:"95%"}}>
               <div className="footer_bottominner">
                 <div className="row rowBox align-items-center">
                   <div className="col-xxl-6 col-xl-5 col-lg-4 col-md-12 col-sm-12 col-12 columnBox">
@@ -129,7 +129,7 @@ const Footer = ()=>{
                       {/*</div>*/}
                       <div className="footerRegionBox">
         <span className="icon"><img className="img-fluid lazyloaded" data-src="https://vectra.kidzz.in/backup_full/images/icon/glob-icon.svg" alt="" src="https://vectra.kidzz.in/backup_full/images/icon/glob-icon.svg" /></span>
-        <select className="form-select">
+        <select className="" style={{outline:"none", border:"none"}}>
           <option>Choose Region</option>
         </select>
       </div>

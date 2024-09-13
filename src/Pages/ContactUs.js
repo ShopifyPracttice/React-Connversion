@@ -6,7 +6,7 @@ const ContactUs = ()=>{
 return (
   
         <section className="contact-sec pt-80 pb-80">
-          <div className="container">
+          <div className="container" style={{maxWidth:"98%"}}>
             <div className="contact-inner">
               <div className="row">
                 <div className="col-lg-7">

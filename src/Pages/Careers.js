@@ -47,17 +47,17 @@ const Career = ()=>{
 return (
 <main>  
         <section className="blog-header">
-          <div className="container">
+          <div className="container" style={{maxWidth:'95%'}}>
             <div className="blog-header-inner">
               <ul>
-                <li><Link to="#"><img src={Homeicon} alt="" /></Link></li>
+                <li><Link to="/"><img src={Homeicon} alt="" /></Link></li>
                 <li>Careers</li>
               </ul>
             </div>
           </div>
         </section>
         <section className="resoueces-sec career-banner-sec pt-40 pb-40">
-        <div className="container">
+        <div className="container" style={{maxWidth:"95%"}}>
           <div className="resources-inner">
             <div className="row align-items-center">
               <div className="col-lg-6">
@@ -83,7 +83,7 @@ return (
         </div>
       </section>
       <section className="position-sec pb-20">
-        <div className="container">
+        <div className="container" style={{maxWidth:"95%"}}>
           <div className="position-inner">
             <h2>Open Positions</h2>
             <div className="position-bottom pt-30">
@@ -226,7 +226,7 @@ return (
         </div>
       </section>
       <section className="green-bg-color trustedSec careerJoinUsSec">
-        <div className="container">
+        <div className="container" style={{maxWidth:"95%"}}>
           <div className="global-join-sec careerJoinUsSecinner">
             <h3>Build a Fulfilling Career as a Consultant</h3>
             <p>Join VECTRA International and enable positive impact in global supply chains.</p>
@@ -238,7 +238,7 @@ return (
         </div>
       </section>
       <section className="join-us-sec pt-40 pb-40">
-        <div className="container">
+        <div className="container" style={{maxWidth:"95%"}}>
           <div className="join-us-inner">
             <h2 className="text-center mb-30">Why Join Us?</h2>
             <div className="row">
@@ -282,7 +282,7 @@ return (
         </div>
       </section>
       <section className="mission-vission-sec pb-50">
-            <div className="container">
+            <div className="container" style={{maxWidth:"95%"}}>
               <div className="mission-inner">
                 <div className="row">
                   <div className="col-lg-6">
@@ -305,7 +305,7 @@ return (
             </div>
           </section>
           <section className="value-sec pt-32 pb-50">
-            <div className="container">
+            <div className="container" style={{maxWidth:"95%"}}>
               <div className="value-inner">
                 <h2 className="text-center mb-30">VECTRA Values</h2>
                 <div className="values-row">
@@ -364,7 +364,7 @@ return (
             </div>
           </section>
           <section className="leadership-sec pt-50 pb-50 litegreen">
-      <div className="container">
+      <div className="container" style={{maxWidth:"95%"}}>
         <div className="leadership-inner">
           <h2 className="text-center mb-30">Our Leadership Team</h2>
           <Slider {...settings} className="leadership-slider">
@@ -437,7 +437,7 @@ return (
       </div>
     </section>
     <section className="world-map pt-48 pb-48">
-            <div className="container">
+            <div className="container" style={{maxWidth:"95%"}}>
               <div className="world-map-inner">
                 <div className="row">
                   <div className="col-lg-4">

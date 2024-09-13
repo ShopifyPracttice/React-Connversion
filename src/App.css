@@ -254,7 +254,7 @@ input::-webkit-inner-spin-button { -webkit-appearance: none;  margin: 0;}
 .service-mobile-img { display: none;}
 /* resources html */
 .resoueces-listing-banner-sec .block-title {  font-size: 60px;  line-height: 72px;}
-.resources-input-sec { display: flex;  align-items: center; /*justify-content: space-between;*/}
+.resources-input-sec { display: flex;  align-items: center; gap: 10px; /*justify-content: space-between;*/}
 .resources-input-box { position: relative; width: 335px;}
 .resources-input-box input { width: 100%; background-color: transparent; color: rgba(34, 123, 44, 1); border: 1px solid rgba(34, 123, 44, 1); padding: 16px 16px; border-radius: 10px; padding-right: 48px;  box-shadow: 0 2px 15px 0 rgb(0, 0, 0, 0.2); font-size: 20px; line-height: 32px;}
 .resources-input-box button { padding: 6px 16px;  border: 0;  background: no-repeat;  position: absolute;  top: 0;  right: 0;  height: 100%;}

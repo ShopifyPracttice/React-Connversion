@@ -33,7 +33,7 @@ const Header = () => {
 
   const selectLanguage = (language) => {
     setSelectedLanguage(language);
-    setIsDropdownOpen(false);
+    setIsOpen(false);
   };
   const toggleDropdowns = () => setIsOpen(!isOpen);
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
@@ -78,13 +78,13 @@ const Header = () => {
           </div>
         </div>
         <div className="navigationArea">
-          <div className="container">
+          <div className="container" style={{maxWidth:"100%"}}>
             <div className="navigationAreainner">
               <nav className="navbar navbar-expand-xl">
                 <button className="navbar-toggler" onClick={()=>setIsMenuOpen(true)} type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar" aria-expanded="true">
                   <i className="fas fa-bars" />
                 </button>
-                <a className="navbar-brand" href>
+                <a className="navbar-brand" href='/'>
                   <img className="img-fluid ls-is-cached lazyloaded" src={logo} alt="logo"  />
                 </a>
                 <div className="language-selector" >
@@ -130,7 +130,10 @@ const Header = () => {
                   </div>
                   <ul className="navbar-nav mx-auto1">
                     <li className={`nav-item dropdown_menu ${openSubmenu === "services" ?"curent":""}`} onClick={()=>toggleSubMenu("services")}>
-                      <Link className="nav-link" to="services">Services</Link>
+                      <Link className="nav-link" to="/services" >
+                      
+                       <span onClick={()=>setIsMenuOpen(false)}> Services</span>
+                      </Link>
                       <ul className="sub-menu">
                         <li><a href="/service-detail/compliance-risk-due-diligence">Compliance, Risk, &amp; Due diligence </a></li>
                         <li><a href="/service-detail/current-situation-analysis">Current Situation Analysis</a></li>
@@ -141,21 +144,23 @@ const Header = () => {
                       </ul>
                     </li>
                     <li className={`nav-item dropdown_menu ${openSubmenu === "resources"?"curent":""}`} onClick={()=>toggleSubMenu("resources")}>
-                      <Link className="nav-link" to="/resources">Resources</Link>
+                      <Link className="nav-link" to="/resources">
+                      <span onClick={()=>setIsMenuOpen(false)}>Resources</span>
+                      </Link>
                       <ul className="sub-menu">
                         {/* <li><a href="/resources">Blogs</a></li>
                         <li><a href="/article">Articles</a></li> */}
-                        <li><a href="/resources">Blogs</a></li>
-                        <li><a href="/client-success-stories">Client Success Stories</a></li>
-                        <li><a href="/guide">eBooks</a></li>
-                        <li><a href="/press-releases">Press Releases</a></li>
+                        <li><a href="/resources#blogs">Blogs</a></li>
+                        {/* <li><a href="/client-success-stories">Client Success Stories</a></li> */}
+                        <li><a href="/resources#article">Articles</a></li>
+                        <li><a href="/resources#press-releases">Press Releases</a></li>
                       </ul>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="https://shop.vectra-intl.com" target="_blank">Shop</a>
                     </li>
                     <li className="nav-item nav-about-item">
-                      <a className="nav-link nav-about-link" href="about-us">About Us</a>
+                      <a className="nav-link nav-about-link" href="/about-us">About Us</a>
                     </li>
                     {/*<li class="nav-item nav-search-item">*/}
                     {/*	<a class="nav-link nav-search-link" href="#">*/}
@@ -163,7 +168,7 @@ const Header = () => {
                     {/*	</a>*/}
                     {/*</li>*/}
                     <li className="nav-item nav-contact-item">
-                      <a className="nav-link nav-contact-link" href="contact-us">Contact Us</a>
+                      <a className="nav-link nav-contact-link" href="/contact-us">Contact Us</a>
                     </li>
                   </ul>
                   <div className="navbar-collapse-region">
@@ -173,7 +178,7 @@ const Header = () => {
                   </div>
                 </div>
                 <div className="rightSide">
-                  <a className="custome-btn contactBtnBtn" href="contact-us"><span className="txt">Contact Us</span></a>
+                  <a className="custome-btn contactBtnBtn" href="/contact-us"><span className="txt">Contact Us</span></a>
                 </div>
               </nav>
             </div>

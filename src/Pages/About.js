@@ -14,7 +14,7 @@ import ResourceBlog2 from "../images/resources/resources-blog-img2.png";
 import ResourceBlog3 from "../images/resources/resources-blog-img3.png";
 import VectorFram from "../images/vectra/vectra-fram.png";
 import VectorFram2 from "../images/vectra/vectra-fram2.png";
-import RightArrow2 from "../images/icon/right-arrow-2.svg";
+import RightArrow2 from "../images/icon/right-arrow.svg";
 import VectraImage from "../images/vectra/vectra-img.png";
 import PressIcon from "../images/icon/press-icon.png";
 
@@ -47,14 +47,14 @@ const About = ({setDisplayForm}) =>{
   
         <main>
           <section className="vectra-banner">
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="vectra-inner">
                 <h1>About VECTRA International</h1>
               </div>
             </div>
           </section>
           <section className="vectra-img-cont pt-40 pb-40">
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="vectra-img-cont-inner">
                 <div className="row align-items-center">
                   <div className="col-lg-6">
@@ -83,7 +83,7 @@ const About = ({setDisplayForm}) =>{
             </div>
           </section>
           <section className="mission-vission-sec pb-50">
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="mission-inner">
                 <div className="row">
                   <div className="col-lg-6">
@@ -106,7 +106,7 @@ const About = ({setDisplayForm}) =>{
             </div>
           </section>
           <section className="value-sec pt-32 pb-50">
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="value-inner">
                 <h2 className="text-center mb-30">VECTRA Values</h2>
                 <div className="values-row">
@@ -165,7 +165,7 @@ const About = ({setDisplayForm}) =>{
             </div>
           </section>
           <section className="leadership-sec pt-50 pb-50 litegreen">
-      <div className="container">
+      <div className="container" style={{maxWidth:"95%"}}>
         <div className="leadership-inner">
           <h2 className="text-center mb-30">Our Leadership Team</h2>
           <Slider {...settings} className="leadership-slider">
@@ -318,7 +318,7 @@ const About = ({setDisplayForm}) =>{
             </div>
           </section> */}
           <section className="world-map pt-48 pb-48">
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="world-map-inner">
                 <div className="row">
                   <div className="col-lg-4">
@@ -341,14 +341,14 @@ const About = ({setDisplayForm}) =>{
             </div>
           </section>
           <section className="resources-blog-sec resources-blog-bg pt-60 pb-60 ">
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="vectra-blog-img">
                 <div className="resources-blog-inner">
                   <div className="resources-blog-headeing">
                     <img src={PressIcon} alt="" />
                     <p>Press Releases</p>
                   </div>
-                  <Link to="/resource/blogs" className="custome-btn" >
+                  <Link to="/resources#press-releases" className="custome-btn" >
                     <span className="txt">Explore All</span>
                     <span className="icon"><img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow2} /></span>
                   </Link>
@@ -357,28 +357,28 @@ const About = ({setDisplayForm}) =>{
                   <div className="row rowBox">
                     <div className="col-lg-4 columnBox mb-20">
                       <div className="resources-blog-box">
-                        <img src={ResourceBlog} alt="" />
+                        <img src="https://fffmestb.blob.core.windows.net/vectracs/resources/%7Bpost-2024-47-21%2010:47:24-RESOURCE-p%7D/image01.jpg" alt="" />
                         <div className="resources-blog-box-inner">
-                          <p>Why Independent Quality Assurance is Essential for Accurate ESG Reports</p>
+                          {/* <p>Why Independent Quality Assurance is Essential for Accurate ESG Reports</p> */}
                         </div>
                       </div>
                     </div>
-                    <div className="col-lg-4 columnBox mb-20">
+                    {/* <div className="col-lg-4 columnBox mb-20">
                       <div className="resources-blog-box">
                         <img src={ResourceBlog2} alt="" />
                         <div className="resources-blog-box-inner">
                           <p>Ways to know if your supplier is disposing plastic properly!</p>
                         </div>
                       </div>
-                    </div>
-                    <div className="col-lg-4 columnBox mb-20">
+                    </div> */}
+                    {/* <div className="col-lg-4 columnBox mb-20">
                       <div className="resources-blog-box">
                         <img src={ResourceBlog3} alt="" />
                         <div className="resources-blog-box-inner">
                           <p>What the EU's New Deforestation Law Means for Indian Companies! Key f...</p>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

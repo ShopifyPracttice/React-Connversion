@@ -107,10 +107,10 @@ const HomePage = ({setDisplayForm,setIsOpen})=>{
         autoplayTimeout: 3000,
         responsive: {
           0: {
-            items: 1,
+            items: 3,
           },
           600: {
-            items: 3,
+            items: 6,
           },
           1000: {
             items: 9,
@@ -120,7 +120,7 @@ const HomePage = ({setDisplayForm,setIsOpen})=>{
       return (
         <main className>
           <section className="homePageBanner mobilebanner">
-            <div className="container">
+            <div className="container" style={{maxWidth:'95%'}}>
               <div className="homePageBannerSecinner">
                 <div className="homePageBannerContent">
                   <h1 className="fw-300 mb-20">Responsible ESG Business<br /> Consultants for Supply Chains</h1>
@@ -317,7 +317,7 @@ const HomePage = ({setDisplayForm,setIsOpen})=>{
                         <h3 className="mav-20 fw-400 block-title">Unlock Instant Solutions<br /> with the <span className="green-txt-color">VECTRA Shop</span></h3>
                         <p className="mb-25 text">Get access to the comprehensive resources<br /> for meeting your
                           company’s ESG goals.</p>
-                        <Link to="https://vi-tech.com.tr" className="custome-btn" target="_blank">
+                        <Link to="https://shop.vectra-intl.com" className="custome-btn" target="_blank">
                           <span className="txt">Explore All</span>
                           <span className="icon"><img className="img-fluid lazyload" src={RightArrow2} alt="logo" /></span>
                         </Link>

@@ -13,8 +13,8 @@ const Services = () =>{
       return (
   
         <main>
-          <section className="service-top pt-40 serviceListingSec" style={{paddingTop: '40px', background:'#227B2C', color:'white'}}>
-            <div className="container">
+          <section className="service-top pt-40 serviceListingSec" style={{paddingTop: '40px', background:'#fdfdfd'}}>
+            <div className="container"style={{maxWidth:"98%"}}>
               <div className="service-top-inner">
                 <h1 className="mav-20 fw-400 block-title">Your Trusted Partner for<br /> End-to-End ESG Solutions</h1>
                 <p>VECTRA International offers a complete suite of services to navigate the complex<br /> landscape of

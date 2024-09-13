@@ -30,6 +30,7 @@ import Career from './Pages/Careers';
 import CostManagementServices from './Pages/CostManagementServices';
 import ResourceBlogPage from './Pages/ResourceBlog';
 import SubscribeForm from './components/SubscribeForm';
+import ComplianceRiskDueDiligence from './Pages/ComplianceRiskDueDiligence';
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [displayForm, setDisplayForm] = useState(false);
@@ -87,7 +88,9 @@ function App() {
          <Route path='/service-detail/reporting' element={<Reporting setDisplayForm={setDisplayForm}/>}/>
          <Route path='/service-detail/current-situation-analysis' element={<CurrentSituationAnalysis setDisplayForm={setDisplayForm}/>}/>
          <Route path='/service-detail/independent-quality-assurance' element={<IndependentQualityAssurance setDisplayForm={setDisplayForm}/>}/>
-         <Route path='/service-detail/site-performance-improvement' element={<SitePerformanceImprovement/>}/>
+         <Route path='/service-detail/site-performance-improvement' element={<SitePerformanceImprovement />}/>
+         <Route path='/service-detail/compliance-risk-due-diligence' element={<ComplianceRiskDueDiligence setDisplayForm={setDisplayForm}/>}/>
+
        </Routes>
        <Link id="scrollTop" class="scrollTopbtn"><img class="img-fluid lazyload" src={ArrowUp} alt=""/></Link>
         <ModalComponent displayForm={displayForm} setDisplayForm={setDisplayForm}/>

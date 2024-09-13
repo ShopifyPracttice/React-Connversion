@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import ReportingBackground from "../images/service/reporting-banner.png";
 import RightArrow2 from "../images/icon/right-arrow-2.svg";
@@ -10,11 +11,36 @@ import ChooseIcon3 from "../images/service/choose-icon3.png";
 import ChooseIcon4 from "../images/service/choose-icon4.png";
 import TouchLogo from "../images/bg/getInTouch-bg.webp";
 const Reporting = ({setDisplayForm}) =>{
+  const elementRef = useRef(null);
+    const [isHidden, setIsHidden] = useState(false);
+    const [selectDropDown, setSelectedDropDown] = useState("FA");
+    const [displayDropDown, setDisplayDropDown] = useState(false);
+     
+     
+    useEffect(() => {
+        const handleResize = () => {
+          if (elementRef.current) {
+            const width = elementRef.current.offsetWidth;
+            setIsHidden(width <= 574);
+          }
+        };
+    
+        // Initial check
+        handleResize();
+    
+        // Add event listener for resize
+        window.addEventListener('resize', handleResize);
+    
+        // Clean up event listener on component unmount
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
       return (
   
-        <main>
+        <main ref={elementRef}>
           <section className="service-details-banner" style={{background: `url(${ReportingBackground}) no-repeat center center/cover`}}>
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="homePageBannerSecinner">
                 <div className="homePageBannerContent">
                   <h1 className="fw-300 mb-20">Reporting</h1>
@@ -35,7 +61,7 @@ const Reporting = ({setDisplayForm}) =>{
             </div>
           </section>
           <section className="meet-sec pt-30">
-            <div className="container">
+            <div className="container" style={{maxWidth:"98%"}}>
               <div className="meet-inner-sec">
                 <div className="meet-inner-header-sec">
                   <h3 className="mav-20 fw-400 block-title">We can help your<br /> organization meet</h3>
@@ -58,16 +84,16 @@ const Reporting = ({setDisplayForm}) =>{
                   <div className="col-lg-6">
                     <div className="meet-right">
                       <div className="tab-content meet-accordian" id="v-pills-tabContent">
-                        <div className="tab-pane fade show active meet-accordian-item curent" id="tabOne" role="tabpanel" aria-labelledby="v-pills-home-tab" tabIndex={0}>
+                        <div className={`tab-pane fade show active meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "FA"?"curent":""}`} id="tabOne" role="tabpanel" aria-labelledby="v-pills-home-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("FA"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>Framework Alignment</h4>
                             </div>
                             <div className="meet-accordian-body">
                               <p>We support your organization in aligning your operations, data structures, and 
                                 obligations with legal and/or voluntary reporting standards, such as ESFS, CSRD, GRI, Canada Bill 211, LkSG, CSDDD...</p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-1" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
@@ -101,16 +127,16 @@ const Reporting = ({setDisplayForm}) =>{
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabTwo" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "MA"?"curent":""}`} id="tabTwo" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("MA"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>Materiality Assessment</h4>
                             </div>
                             <div className="meet-accordian-body">
                               <p>We determine the double materiality of your organization's operations and impacts
                                 for reporting and resource prioritization.</p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-2" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
@@ -144,16 +170,16 @@ const Reporting = ({setDisplayForm}) =>{
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabthree" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "SE"?"curent":""}`} id="tabthree" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("SE"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>Stakeholder Engagement</h4>
                             </div>
                             <div className="meet-accordian-body">
                               <p>We identify and engage with stakeholders on your behalf regarding significant issues,
                                 material ESG topics, and/or seeking input on current ESG strategies and approaches.</p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-3" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
@@ -187,16 +213,16 @@ const Reporting = ({setDisplayForm}) =>{
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabFour" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "GAP"?"curent":""}`} id="tabFour" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("GAP"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>GAP Analysis</h4>
                             </div>
                             <div className="meet-accordian-body">
                               <p>We identify and address gaps between your current practices and evolving legal requirements
                                 (EUDR, CSDDD, LkSG, NTA, CSRD/ESRS, UFLPA, Modern Slavery Acts...) in your operational, target, or supply chain countries.</p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-4" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
@@ -230,16 +256,16 @@ const Reporting = ({setDisplayForm}) =>{
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabFive" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "DC"?"curent":""}`} id="tabFive" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("DC"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>Data Collection</h4>
                             </div>
                             <div className="meet-accordian-body">
                               <p>We offer cost-effective support to collect relevant data and set up data structures and
                                 platforms to manage, improve, and report your ESG performance and impacts.</p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-5" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
@@ -273,16 +299,16 @@ const Reporting = ({setDisplayForm}) =>{
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabSix" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "SECR"?"curent":""}`} id="tabSix" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("SECR"); setDisplayDropDown(!displayDropDown)}}>
                               <h4>Sustainability, ESG, CSR reporting</h4>
                             </div>
                             <div className="meet-accordian-body">
                               <p>We provide 'assurance-ready' reporting support, empowering you to confidently report to
                                 customers and stakeholders, meet legal obligations, and accelerate sustainability and ESG performance.</p>
                               <div className="mb-10 d-flex align-items-center meet-right-box-title-sec"> 
-                                <h5 className="mb-0">Client Success Stories</h5>
+                                {/* <h5 className="mb-0">Client Success Stories</h5> */}
                                 <div className="ml-10 custom-owl-nav custom-owl-nav-6" />                                            
                               </div>         
                               <div className="successStoriesSliderArea">
