@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from 'react';
 import { Link } from "react-router-dom";
 import CareerImage1 from "../images/career/leadership-img1.png";
 import GreenLocation from "../images/career/green-location.png";
@@ -15,11 +16,34 @@ import ResourceBlog3 from "../images/resources/resources-blog-img3.png";
 import VectorFram from "../images/vectra/vectra-fram.png";
 import VectorFram2 from "../images/vectra/vectra-fram2.png";
 import RightArrow2 from "../images/icon/right-arrow.svg";
+import RightArrow from "../images/icon/right-arrow-2.svg";
 import VectraImage from "../images/vectra/vectra-img.png";
 import PressIcon from "../images/icon/press-icon.png";
 
 
 const About = ({setDisplayForm}) =>{
+  const [isRemove, setIsRemove] = useState(false);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (elementRef.current) {
+        const width = elementRef.current.offsetWidth;
+        setIsRemove(width <= 574);
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener for resize
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
     const settings = {
         dots: false,  // No bullets
         infinite: true,
@@ -36,6 +60,12 @@ const About = ({setDisplayForm}) =>{
             },
           },
           {
+           breakpoint: 745,
+           settings:{
+            slidesToShow: 2,
+           }
+          },
+          {
             breakpoint: 600, // Screen width less than 600px
             settings: {
               slidesToShow: 1,
@@ -45,7 +75,7 @@ const About = ({setDisplayForm}) =>{
       };
       return (
   
-        <main>
+        <main ref={elementRef}>
           <section className="vectra-banner">
             <div className="container" style={{maxWidth:"98%"}}>
               <div className="vectra-inner">
@@ -213,7 +243,7 @@ const About = ({setDisplayForm}) =>{
                         Brazil, with a focus on sustainability strategy, human rights, and social
                         compliance, backed by 20 years of consultancy experience and a background in law.
                       </p>
-                      <ul className="leader-ship-social-links" style={{marginTop:'13px'}}>
+                      <ul className="leader-ship-social-links" style={{marginTop:'28px'}}>
                         <li><Link to="#"><img src={LinkedInLogo1} alt="" className="linkdin-img" /></Link></li>
                       </ul>
                     </div>
@@ -392,9 +422,9 @@ const About = ({setDisplayForm}) =>{
                   <div className="vectra-join-us-wrapper">
                     <p className="block-title">From strategy to transformation,<br /> we help businesses thrive. Get the<br /> support you need.</p>
                     <div className="vectra-join-us-right">
-                      <Link to="#" onClick={()=>setDisplayForm(true)} className="custome-btn">
+                      <Link to="/contact-us" onClick={()=>setDisplayForm(true)} className="custome-btn">
                         <span className="txt">Contact Us</span>
-                        <span className="icon"><img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow2} /></span>
+                        <span className="icon"><img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow} /></span>
                       </Link>
                     </div>
                   </div>
@@ -406,9 +436,9 @@ const About = ({setDisplayForm}) =>{
                   <div className="vectra-join-us-wrapper">
                     <p className="block-title">Want to make a positive<br /> impact?</p>
                     <div className="vectra-join-us-right">
-                      <Link to="#" onClick={()=>setDisplayForm(true)} className="custome-btn">
+                      <Link to="/careers" onClick={()=>setDisplayForm(true)} className="custome-btn">
                         <span className="txt">Join Us</span>
-                        <span className="icon"><img className="img-fluid ls-is-cached lazyloaded" alt="logo" src={RightArrow2} /></span>
+                        <span className="icon"><img className="img-fluid ls-is-cached lazyloaded" alt="logo" src={RightArrow} /></span>
                       </Link>
                     </div>
                   </div>

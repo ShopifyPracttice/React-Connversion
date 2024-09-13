@@ -15,8 +15,18 @@ const Reporting = ({setDisplayForm}) =>{
     const [isHidden, setIsHidden] = useState(false);
     const [selectDropDown, setSelectedDropDown] = useState("FA");
     const [displayDropDown, setDisplayDropDown] = useState(false);
-     
-     
+    // const [isScreen, setIsScreen] = useState(false);
+    const handleDropDownClick = (dropdownId) => {
+      if (selectDropDown === dropdownId && displayDropDown) {
+        // If the same dropdown is clicked twice, close it (double-click behavior)
+        setDisplayDropDown(false);
+        setSelectedDropDown(""); 
+      } else {
+        // Otherwise, open the clicked dropdown and close the previously opened one
+        setSelectedDropDown(dropdownId);
+        setDisplayDropDown(true);
+      }
+    };
     useEffect(() => {
         const handleResize = () => {
           if (elementRef.current) {
@@ -41,7 +51,7 @@ const Reporting = ({setDisplayForm}) =>{
         <main ref={elementRef}>
           <section className="service-details-banner" style={{background: `url(${ReportingBackground}) no-repeat center center/cover`}}>
             <div className="container" style={{maxWidth:"98%"}}>
-              <div className="homePageBannerSecinner">
+              <div className="homePageBannerSecinner" style={{padding:'10px', minHeight: isHidden?"490px":"582px"}}>
                 <div className="homePageBannerContent">
                   <h1 className="fw-300 mb-20">Reporting</h1>
                   <p>We offer expert guidance and support to help you effectively communicate your ESG 
@@ -86,7 +96,7 @@ const Reporting = ({setDisplayForm}) =>{
                       <div className="tab-content meet-accordian" id="v-pills-tabContent">
                         <div className={`tab-pane fade show active meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "FA"?"curent":""}`} id="tabOne" role="tabpanel" aria-labelledby="v-pills-home-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("FA"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("FA"); }}>
                               <h4>Framework Alignment</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -129,7 +139,7 @@ const Reporting = ({setDisplayForm}) =>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "MA"?"curent":""}`} id="tabTwo" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("MA"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{ handleDropDownClick("MA"); }}>
                               <h4>Materiality Assessment</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -172,7 +182,7 @@ const Reporting = ({setDisplayForm}) =>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "SE"?"curent":""}`} id="tabthree" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("SE"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{ handleDropDownClick("SE");}}>
                               <h4>Stakeholder Engagement</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -215,7 +225,7 @@ const Reporting = ({setDisplayForm}) =>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "GAP"?"curent":""}`} id="tabFour" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("GAP"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{ handleDropDownClick("GAP");}}>
                               <h4>GAP Analysis</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -258,7 +268,7 @@ const Reporting = ({setDisplayForm}) =>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "DC"?"curent":""}`} id="tabFive" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("DC"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("DC");}}>
                               <h4>Data Collection</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -301,7 +311,7 @@ const Reporting = ({setDisplayForm}) =>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "SECR"?"curent":""}`} id="tabSix" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("SECR"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{ handleDropDownClick("SECR");}}>
                               <h4>Sustainability, ESG, CSR reporting</h4>
                             </div>
                             <div className="meet-accordian-body">

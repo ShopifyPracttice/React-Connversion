@@ -15,7 +15,17 @@ const IndependentQualityAssurance = ({setDisplayForm})=>{
     const [isHidden, setIsHidden] = useState(false);
     const [selectDropDown, setSelectedDropDown] = useState("RQA");
     const [displayDropDown, setDisplayDropDown] = useState(false);
-     
+    const handleDropDownClick = (dropdownId) => {
+      if (selectDropDown === dropdownId && displayDropDown) {
+        // If the same dropdown is clicked twice, close it (double-click behavior)
+        setDisplayDropDown(false);
+        setSelectedDropDown(""); 
+      } else {
+        // Otherwise, open the clicked dropdown and close the previously opened one
+        setSelectedDropDown(dropdownId);
+        setDisplayDropDown(true);
+      }
+    };
      
     useEffect(() => {
         const handleResize = () => {
@@ -41,7 +51,7 @@ const IndependentQualityAssurance = ({setDisplayForm})=>{
         <main ref={elementRef}>
           <section className="service-details-banner" style={{background: `url(${BackgroundService}) no-repeat center center/cover`}}>
             <div className="container" style={{maxWidth:"98%"}}>
-              <div className="homePageBannerSecinner">
+              <div className="homePageBannerSecinner" style={{padding:"10px",minHeight: isHidden?"490px":"582px"}}>
                 <div className="homePageBannerContent">
                   <h1 className="fw-300 mb-20">Independent Quality<br /> Assurance</h1>
                   <p>We provide comprehensive quality assurance services to ensure the accuracy,
@@ -83,7 +93,7 @@ const IndependentQualityAssurance = ({setDisplayForm})=>{
                       <div className="tab-content meet-accordian" id="v-pills-tabContent">
                         <div className={`tab-pane fade show active meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "RQA"?"curent":""}`} id="tabOne" role="tabpanel" aria-labelledby="v-pills-home-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("RQA"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("RQA")}}>
                               <h4>Report Quality Assurance</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -126,7 +136,7 @@ const IndependentQualityAssurance = ({setDisplayForm})=>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "PM"?"curent":""}`} id="tabTwo" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("PM"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("PM");}}>
                               <h4>Program Management</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -169,7 +179,7 @@ const IndependentQualityAssurance = ({setDisplayForm})=>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "HD"?"curent":""}`} id="tabthree" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("HD"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("HD"); }}>
                               <h4>Helpdesk</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -212,7 +222,7 @@ const IndependentQualityAssurance = ({setDisplayForm})=>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "PAC"?"curent":""}`} id="tabFour" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("PAC"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("PAC");}}>
                               <h4>Public Assurance of Reports and Claims</h4>
                             </div>
                             <div className="meet-accordian-body">

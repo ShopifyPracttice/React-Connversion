@@ -16,7 +16,17 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
   const [isHidden, setIsHidden] = useState(false);
   const [selectDropDown, setSelectedDropDown] = useState("AD");
   const [displayDropDown, setDisplayDropDown] = useState(false);
-   
+  const handleDropDownClick = (dropdownId) => {
+    if (selectDropDown === dropdownId && displayDropDown) {
+      // If the same dropdown is clicked twice, close it (double-click behavior)
+      setDisplayDropDown(false);
+      setSelectedDropDown(""); 
+    } else {
+      // Otherwise, open the clicked dropdown and close the previously opened one
+      setSelectedDropDown(dropdownId);
+      setDisplayDropDown(true);
+    }
+  };
    
   useEffect(() => {
       const handleResize = () => {
@@ -62,7 +72,7 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
           <section className="meet-sec pt-30">
             <div className="container" style={{maxWidth:"98%"}}>
               <div className="meet-inner-sec">
-                <div className="meet-inner-header-sec">
+                <div className="meet-inner-header-sec" style={{padding:"10px",minHeight: isHidden?"490px":"582px"}}>
                   <h3 className="mav-20 fw-400 block-title">We can help your<br /> organization meet</h3>
                 </div>
                 <div className="row align-items-center pt-20">
@@ -89,7 +99,7 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
                       <div className="tab-content meet-accordian" id="v-pills-tabContent">
                         <div className={`tab-pane fade show active meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "AD"?"curent":""}`} id="tabOne" role="tabpanel" aria-labelledby="v-pills-home-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("AD"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("AD");}}>
                               <h4>Audit Requirements of a Compliance Standard</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -133,7 +143,7 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "CR"?"curent":""}`} id="tabTwo" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("CR"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{ handleDropDownClick("CR"); }}>
                               <h4>Certification Requirements</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -177,7 +187,7 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "CPLR"?"curent":""}`} id="tabthree" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("CPLR"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{ handleDropDownClick("CPLR");}}>
                               <h4>Current and/or Proposed Legal Requirements</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -223,7 +233,7 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "ESG"?"curent":""}`} id="tabFour" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("ESG"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{ handleDropDownClick("ESG");}}>
                               <h4>Company ESG Targets and Reporting Commitments</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -268,7 +278,7 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "YCR"?"curent":""}`} id="tabFive" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("YCR"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("YCR");}}>
                               <h4>Your Customer Requirements</h4>
                             </div>
                             <div className="meet-accordian-body">

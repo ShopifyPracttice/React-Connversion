@@ -6,7 +6,17 @@ const ComplianceRiskDueDiligence = ({setDisplayForm}) =>{
     const [selectDropDown, setSelectedDropDown] = useState("GAP");
     const [displayDropDown, setDisplayDropDown] = useState(false);
      
-     
+    const handleDropDownClick = (dropdownId) => {
+      if (selectDropDown === dropdownId && displayDropDown) {
+        // If the same dropdown is clicked twice, close it (double-click behavior)
+        setDisplayDropDown(false);
+        setSelectedDropDown(""); 
+      } else {
+        // Otherwise, open the clicked dropdown and close the previously opened one
+        setSelectedDropDown(dropdownId);
+        setDisplayDropDown(true);
+      }
+    };
     useEffect(() => {
         const handleResize = () => {
           if (elementRef.current) {
@@ -32,7 +42,7 @@ const ComplianceRiskDueDiligence = ({setDisplayForm}) =>{
         <main ref={elementRef}>
           <section className="service-details-banner" data-background="https://apexxcapital.co/images/service/compliance-risk-due-diligence-banner.png" style={{backgroundImage: 'url("https://apexxcapital.co/images/service/compliance-risk-due-diligence-banner.png")'}}>
             <div className="container" style={{maxWidth:"98%"}}>
-              <div className="homePageBannerSecinner">
+              <div className="homePageBannerSecinner" style={{padding:'10px',minHeight: isHidden?"490px":"582px"}}>
                 <div className="homePageBannerContent">
                   <h1 className="fw-300 mb-20">Compliance, Risk, &amp; <br /> Due diligence </h1>
                   <p>We help you identify, assess, and mitigate ESG risks across your supply chain, ensuring compliance with evolving regulations and industry standards.</p>
@@ -72,9 +82,9 @@ const ComplianceRiskDueDiligence = ({setDisplayForm}) =>{
                   <div className="col-lg-6">
                     <div className="meet-right">
                       <div className="tab-content meet-accordian" id="v-pills-tabContent">
-                        <div className={`tab-pane fade show active meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "GAP"?"curent":""}`}>
+                        <div className={`tab-pane fade show active meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "GAP"?"curent":""}`}id="tabOne" role="tabpanel" aria-labelledby="v-pills-home-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("GAP"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("GAP");}}>
                               <h4>GAP Analysis</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -114,7 +124,7 @@ const ComplianceRiskDueDiligence = ({setDisplayForm}) =>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "DDS"?"curent":""}`} id="tabTwo" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("DDS"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("DDS");}}>
                               <h4>Due Diligence Systemss</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -153,7 +163,7 @@ const ComplianceRiskDueDiligence = ({setDisplayForm}) =>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "SRA"?"curent":""}`} id="tabthree" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("SRA"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{ handleDropDownClick("SRA");}}>
                               <h4>Supply Chain Risk Assessment</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -193,7 +203,7 @@ const ComplianceRiskDueDiligence = ({setDisplayForm}) =>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "SRM"?"curent":""}`} id="tabFour" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("SRM"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("SRM"); }}>
                               <h4>Supply Chain ESG Risk Management</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -232,7 +242,7 @@ const ComplianceRiskDueDiligence = ({setDisplayForm}) =>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "REP"?"curent":""}`} id="tabFive" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("REP"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("REP");}}>
                               <h4>Reporting</h4>
                             </div>
                             <div className="meet-accordian-body">

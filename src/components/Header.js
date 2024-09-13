@@ -14,6 +14,7 @@ const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [openSubmenu, setOpenSubmenu] = useState(null);
+  const [isRemove, setIsRemove] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState({
     code: 'EN',
@@ -67,6 +68,27 @@ const Header = () => {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+  useEffect(() => {
+    const handleResize = () => {
+      if (elementRef.current) {
+        const width = elementRef.current.offsetWidth;
+        setIsRemove(width <= 574);
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener for resize
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  console.log(isRemove);
+  
   return (
 
     <header className="header" ref={elementRef}>
@@ -87,14 +109,15 @@ const Header = () => {
                 <a className="navbar-brand" href='/'>
                   <img className="img-fluid ls-is-cached lazyloaded" src={logo} alt="logo"  />
                 </a>
-                <div className="language-selector" >
+                <div className="language-selector" style={{display: isRemove ?"none":"block"}}>
+                  
       <button onClick={toggleDropdowns} className="dropdown-btn" style={{width:'90px'}}>
         <img src={selectedLanguage.flag} alt={selectedLanguage.code} className="selected-flag" />
         <span className="selected-language">{selectedLanguage.code}</span>
         <span className="arrow-down" />
       </button>
       
-      <ul className={`dropdown-menu ${isOpen ? 'show' : ''}`} aria-labelledby="dropdownMenuButton">
+      <ul className={`dropdown-menu ${isOpen ? 'show' : ''}`}  aria-labelledby="dropdownMenuButton">
         {languages.map((language, index) => (
           <li key={index} onClick={() => selectLanguage(language)}>
             <a className="dropdown-item d-flex align-items-center" href="#">

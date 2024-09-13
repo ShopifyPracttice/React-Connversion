@@ -1,3 +1,4 @@
+import { useState, useEffect, useRef } from "react";
 import TrainingBackground from "../images/service/training-banner.png";
 import TrainingMobile from "../images/service/training-banner-mobile.png";
 import { Link } from "react-router-dom";
@@ -10,12 +11,48 @@ import ChooseIcon3 from "../images/service/choose-icon3.png";
 import ChooseIcon4 from "../images/service/choose-icon4.png";
 import TouchLogo from "../images/bg/getInTouch-bg.webp";
 const Training = ({setDisplayForm}) =>{
+
+  const elementRef = useRef(null);
+  const [isHidden, setIsHidden] = useState(false);
+  const [selectDropDown, setSelectedDropDown] = useState("CAP");
+  const [displayDropDown, setDisplayDropDown] = useState(false);
+  const handleDropDownClick = (dropdownId) => {
+    if (selectDropDown === dropdownId && displayDropDown) {
+      // If the same dropdown is clicked twice, close it (double-click behavior)
+      setDisplayDropDown(false);
+      setSelectedDropDown(""); 
+    } else {
+      // Otherwise, open the clicked dropdown and close the previously opened one
+      setSelectedDropDown(dropdownId);
+      setDisplayDropDown(true);
+    }
+  };
+  
+  useEffect(() => {
+    const handleResize = () => {
+      if (elementRef.current) {
+        const width = elementRef.current.offsetWidth;
+        setIsHidden(width <= 574);
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener for resize
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 return (
   
         <main>
           <section className="service-details-banner" style={{background: `url(${TrainingBackground}) no-repeat center center/cover`}}>
             <div className="container" style={{maxWidth:"98%"}}>
-              <div className="homePageBannerSecinner">
+              <div className="homePageBannerSecinner" style={{padding:"10px",minHeight: isHidden?"490px":"582px"}}>
                 <div className="homePageBannerContent">
                   <h1 className="fw-300 mb-20">Training</h1>
                   <p>We offer tailor-made training (self-paced virtual, online, or on-site / on-the-job)</p>
@@ -56,9 +93,9 @@ return (
                   <div className="col-lg-6">
                     <div className="meet-right">
                       <div className="tab-content meet-accordian" id="v-pills-tabContent">
-                        <div className="tab-pane fade show active meet-accordian-item curent" id="tabOne" role="tabpanel" aria-labelledby="v-pills-home-tab" tabIndex={0}>
+                        <div className={`tab-pane fade show active meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "CAP"?"curent":""}`} id="tabOne" role="tabpanel" aria-labelledby="v-pills-home-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("CAP");}}>
                               <h4>CAP and MAP</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -99,9 +136,9 @@ return (
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabTwo" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "DD"?"curent":""}`} id="tabTwo" role="tabpanel" aria-labelledby="v-pills-profile-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("DD");}}>
                               <h4>Due Diligence</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -142,9 +179,9 @@ return (
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabthree" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "DD"?"curent":""}`} id="tabthree" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("DD");}}>
                               <h4>ESG Standards and Implementation</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -186,9 +223,9 @@ return (
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabFour" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "LCD"?"curent":""}`} id="tabFour" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("LCD");}}>
                               <h4>Legal and Code of Conduct Requirements</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -230,9 +267,9 @@ return (
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabFive" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "REP"?"curent":""}`} id="tabFive" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("REP");}}>
                               <h4>Reporting</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -274,9 +311,9 @@ return (
                             </div>               
                           </div>
                         </div>
-                        <div className="tab-pane fade meet-accordian-item" id="tabSix" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "WMG"?"curent":""}`} id="tabSix" role="tabpanel" aria-labelledby="v-pills-settings-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header">
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("WMG");}}>
                               <h4>Worker Management Dialogue</h4>
                             </div>
                             <div className="meet-accordian-body">

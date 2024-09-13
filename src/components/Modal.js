@@ -35,7 +35,7 @@ const ModalComponent = ({ displayForm, setDisplayForm }) => {
       {/* Popup Modal */}
       <div className="modal myPopupModal" style={{ display: displayForm ? 'grid' : 'none', background: 'rgba(0, 0, 0, 0.3)' }}>
         <div className="" style={{ width: '100%', display: 'grid', placeItems: 'center', height: '100vh' }} >
-          <div className="modal-content" style={{ background: 'transparent', width: '100%' }} >
+          <div className="modal-content" style={{ background: 'transparent', width: '100%', border:"none" }} >
             <button type="button" style={{ display: 'none' }} className="btn-close" onClick={() => setDisplayForm(false)}>
               <i className="fa-regular fa-xmark" />
             </button>

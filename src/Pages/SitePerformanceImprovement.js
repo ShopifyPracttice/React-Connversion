@@ -15,6 +15,18 @@ const SitePerformanceImprovement = ()=>{
   const [isHidden, setIsHidden] = useState(false);
   const [selectDropDown, setSelectedDropDown] = useState("CAP");
   const [displayDropDown, setDisplayDropDown] = useState(false);
+  const handleDropDownClick = (dropdownId) => {
+    if (selectDropDown === dropdownId && displayDropDown) {
+      // If the same dropdown is clicked twice, close it (double-click behavior)
+      setDisplayDropDown(false);
+      setSelectedDropDown(""); 
+    } else {
+      // Otherwise, open the clicked dropdown and close the previously opened one
+      setSelectedDropDown(dropdownId);
+      setDisplayDropDown(true);
+    }
+  };
+  
   useEffect(() => {
     const handleResize = () => {
       if (elementRef.current) {
@@ -38,7 +50,7 @@ const SitePerformanceImprovement = ()=>{
           <main ref={elementRef}>
           <section className="service-details-banner" style={{background: `url(${SitePerformanceImprovements}) no-repeat center center/cover`}}>
             <div className="container" style={{maxWidth:"98%"}}>
-              <div className="homePageBannerSecinner">
+              <div className="homePageBannerSecinner" style={{padding:"10px",minHeight: isHidden?"490px":"582px"}}>
                 <div className="homePageBannerContent">
                   <h1 className="fw-300 mb-20">Site Performance<br /> Improvement</h1>
                   <p>We implement tailor-made ESG, EHS, and social action plans designed to boost
@@ -80,7 +92,7 @@ const SitePerformanceImprovement = ()=>{
                       <div className="tab-content meet-accordian" id="v-pills-tabContent">
                         <div className={`tab-pane fade show active meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "CAP"?"curent":""} `} id="tabOne" role="tabpanel" aria-labelledby="v-pills-home-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("CAP"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("CAP");}}>
                               <h4>Corrective Action Plan (CAP)</h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -166,7 +178,7 @@ const SitePerformanceImprovement = ()=>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "MAP"?"curent":""}`} id="tabthree" role="tabpanel" aria-labelledby="v-pills-disabled-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("MAP"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("MAP");}}>
                               <h4>Management Systems </h4>
                             </div>
                             <div className="meet-accordian-body">
@@ -209,7 +221,7 @@ const SitePerformanceImprovement = ()=>{
                         </div>
                         <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "TWM"?"curent":""}`} id="tabFour" role="tabpanel" aria-labelledby="v-pills-messages-tab" tabIndex={0}>
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" onClick={()=>{setSelectedDropDown("TWM"); setDisplayDropDown(!displayDropDown)}}>
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("TWM");}}>
                               <h4>Training for Workers and Management</h4>
                             </div>
                             <div className="meet-accordian-body">

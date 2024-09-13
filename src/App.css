@@ -219,7 +219,9 @@ input::-webkit-inner-spin-button { -webkit-appearance: none;  margin: 0;}
 /* service details html */
 .service-details-banner {background-position: 50% 50%; background-repeat: no-repeat; background-size: cover; position: relative;}
 .service-details-banner::before { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(241, 246, 251, 1); background: linear-gradient(89.96deg, rgba(241, 246, 251, 1) 30%, rgba(218, 219,221, 0) 98.91%);}
-.service-details-banner .homePageBannerSecinner{ position: relative; padding: 60px 0 60px; min-height: 582px; display: flex; flex-direction: column; justify-content: center;}
+.service-details-banner .homePageBannerSecinner{ position: relative; padding: 60px 0 60px;
+     min-height: 582px; 
+     display: flex; flex-direction: column; justify-content: center;}
 .meet-inner-header-sec .block-title br{display: none;}
 .meet-left .nav-link { font-size: 18px; line-height: 32px; text-align: left; border: 8px; color: #092543;}
 .meet-left .nav-link.active { color: #227B2C; background: #E6F5E4;}
@@ -924,8 +926,8 @@ p br, .block-title br, .homePageBannerContent h1 br, .homePageBannerOfferLink .t
 .tech-executive-banner .phone ul li p{font-size: 18px;line-height: 26px;font-weight: 600;}
 .value-icon {width: 64px;height: 64px;font-size: 30px;line-height: 40px;}
 .value-cont { -webkit-box-flex: 1; -ms-flex: 1; flex: 1;}
-.right-border::before { height: 190px; }
-.left-border::before {height:190px;top: 30px; }
+.right-border::before { height: 190px; margin-left: 6px;}
+.left-border::before {height:190px;top: 30px; margin-left: 6px; }
 .world-map{padding: 50px 0;}
 .contact-sec .contact-right h1 {font-size: 24px;line-height: 32px; font-weight: 400;}
 .contact-sec .contact-right p {font-size: 16px; line-height: 24px; font-weight: 400;}
@@ -5246,7 +5248,8 @@ fieldset:disabled .btn {
 
 .nav-link:focus,
 .nav-link:hover {
-    color: var(--bs-nav-link-hover-color)
+    /* color: var(--bs-nav-link-hover-color) */
+    color: #227B2C;
 }
 
 .nav-link.disabled {
