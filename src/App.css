@@ -149,7 +149,7 @@ input::-webkit-inner-spin-button { -webkit-appearance: none;  margin: 0;}
 .getInTouchFormArea .form-group textarea.form-control { height: 144px;}
 .getInTouchFormArea .form-group .form-check {display: flex; align-items: center;}
 .getInTouchFormArea .form-group .form-check .form-check-input {margin-top: 0px; box-shadow: none; width: 18px; height: 18px; background-color: transparent; border: 3px solid rgba(0, 0, 0, 1); border-radius: 4px;}
-.getInTouchFormArea .form-group .form-check .form-check-input:checked { background-color: rgba(34, 123, 44, 1); border-color: rgba(34, 123, 44, 1);}
+.getInTouchFormArea .form-group .form-check .form-check-input:checked { background-color:  #227b2c; border-color:  #227b2c;}
 .getInTouchFormArea .form-group .form-check .form-check-label {margin-left: 10px; font-size: 14px; line-height: 20px;}
 .esgConsultantFormArea .rowBox{margin-left: -8px;margin-right: -8px;}
 .esgConsultantFormArea .columnBox{padding-left: 8px; padding-right: 8px;}

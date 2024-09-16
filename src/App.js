@@ -1,10 +1,10 @@
 import './App.css';
 import ArrowUp from "./images/icon/up-arrow.svg";
 import { Link } from 'react-router-dom';
-
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import Footer from './components/Footer';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import HomePage from './Pages/HomePage';
@@ -30,10 +30,27 @@ import Career from './Pages/Careers';
 import CostManagementServices from './Pages/CostManagementServices';
 import ResourceBlogPage from './Pages/ResourceBlog';
 import SubscribeForm from './components/SubscribeForm';
+
 import ComplianceRiskDueDiligence from './Pages/ComplianceRiskDueDiligence';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null; // This component doesn't render anything
+}
 function App() {
   const [isOpen, setIsOpen] = useState(false);
   const [displayForm, setDisplayForm] = useState(false);
+  // const location = useLocation();
+  
+  // useEffect(() => {
+  //   // Scroll to top whenever the route changes
+  //   window.scrollTo(0, 0);
+  // }, [location]);
   useEffect(() => {
     const handleScroll = () => {
       const scrollTopBtn = document.querySelector('.scrollTopbtn');
@@ -65,6 +82,7 @@ function App() {
   return (
     <div className="App">
       <BrowserRouter>
+      <ScrollToTop />
        <Header/>
        <Routes>
          <Route path='/' element={<HomePage setDisplayForm={setDisplayForm} setIsOpen={setIsOpen}/>}/>
