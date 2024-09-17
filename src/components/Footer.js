@@ -87,7 +87,7 @@ const Footer = ()=>{
                       </li>
                       <li>
                         <Link href="https://twitter.com/VECTRAintl" target="_blank">
-                          <img src="https://i.pinimg.com/originals/2f/b9/09/2fb909b74a854f0715e64dda5825990d.jpg" style={{width:"60px"}} className="img-fluid lazyload" alt="" />
+                          <img src="https://apexxcapital.co/images/icon/twitter-icon.webp"  className="img-fluid lazyload" alt="" />
                         </Link>
                       </li>
                     </ul>

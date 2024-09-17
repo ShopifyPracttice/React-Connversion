@@ -58,7 +58,7 @@ const ModalComponent = ({ displayForm, setDisplayForm }) => {
                   <h4 className="d-lg-none d-md-none d-sm-none text-center title">Book a free 15 minute call with our expert</h4>
                   <form name="contactForm">
                     <div className="form-group">
-                      <input type="text" name="full_name" className="form-control" placeholder="Name" required />
+                      <input type="text" name="full_name"  className="form-control" placeholder="Name" required />
                     </div>
                     <div className="form-group">
                       <input type="text" name="company_name" className="form-control" placeholder="Company name" required />

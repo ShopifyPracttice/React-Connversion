@@ -1,6 +1,4 @@
 import { useState, useEffect, useRef } from "react";
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/swiper-bundle.css';
 import LocationIcon2 from "../images/icon/location-icon-2.svg";
 import CareerImageA from "../images/career/career-img-a.png";
 import CareerImage1 from "../images/career/leadership-img1.png";
@@ -8,6 +6,8 @@ import GreenLocation from "../images/career/green-location.png";
 import PurpalLocation from "../images/career/parpal-location.png";
 import LinkedInLogo1 from "../images/icon/linkedin-2.png";
 import CareerImage2 from "../images/career/leadership-img2.png";
+import LeftIcon from "../images/icon/left-angle.svg";
+import RightIcon from "../images/icon/right-angle.svg";
 import CareerImage3 from "../images/career/leadership-img3.png";
 import CareerImage4 from "../images/career/leadership-img4.png";
 import CareerImage5 from "../images/career/leadership-img5.png";
@@ -26,6 +26,30 @@ import BlueArrow from "../images/icon/blue-arrow.png";
 const Career = ()=>{
   const elementRef = useRef(null);
   const [isHidden, setIsHidden] = useState(false);
+  const [isRemove, setIsRemove] = useState(false);
+  // const elementRef = useRef(null);
+  const sliderRef = useRef(null);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (elementRef.current) {
+        const width = elementRef.current.offsetWidth;
+        setIsRemove(width <= 574);
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener for resize
+    window.addEventListener('resize', handleResize);
+
+    // Clean up event listener on component unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  
 
   useEffect(() => {
     const handleResize = () => {
@@ -47,37 +71,43 @@ const Career = ()=>{
     };
   }, []);
   const settings = {
-    dots: true,
+    dots: false,  // No bullets
     infinite: true,
     speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 1,
+    slidesToShow: 5, // Number of slides to show at once
+    slidesToScroll: 2,
+    prevArrow: null,
+    nextArrow: null,
     responsive: [
       {
-        breakpoint: 1024,
+        breakpoint: 1024, // Screen width less than 1024px
         settings: {
-          slidesToShow: 2,
-          slidesToScroll: 1,
-          infinite: true,
+          slidesToShow: 3,
         },
       },
       {
-        breakpoint: 700, // Breakpoint for screen widths of 700px and below
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
+       breakpoint: 745,
+       settings:{
+        slidesToShow: 2,
+       }
       },
       {
-        breakpoint: 600,
+        breakpoint: 600, // Screen width less than 600px
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
         },
       },
     ],
   };
-return (
+  const nextSlide = () => {
+    sliderRef.current.slickNext();
+  };
+
+  // Function to go to the previous slide
+  const prevSlide = () => {
+    sliderRef.current.slickPrev();
+  }; 
+  return (
 <main ref={elementRef}>  
         <section className="blog-header">
           <div className="container" style={{maxWidth:'95%'}}>
@@ -397,121 +427,83 @@ return (
             </div>
           </section>
           <section className="leadership-sec pt-50 pb-50 litegreen">
-      <div className="container" style={{ maxWidth: "95%" }}>
-        <div className="leadership-inner">
+      <div className="container" style={{maxWidth:"95%"}}>
+        <div className="leadership-inner" >
           <h2 className="text-center mb-30">Our Leadership Team</h2>
-          <Swiper
-            spaceBetween={30}
-            slidesPerView={5}
-            loop={true}
-            // autoplay={{ delay: 3000 }}
-            breakpoints={{
-              1024: {
-                slidesPerView: 4, // Desktop
-              },
-              700: {
-                slidesPerView: 3, // Tablets
-              },
-              320: {
-                slidesPerView: 1, // Mobile
-              },
-            }}
-            // pagination={{ clickable: true }}
-            // navigation={true}
-            className="leadership-slider"
-          >
-            <SwiperSlide>
-              <div className="leadership-box">
-                <div className="leader-ship-inner" style={{height: isHidden ? "650px":"", position:"relative"}}>
-                  <img src={CareerImage1} alt="Patrick Neyts" />
-                  <h4 className="leadership-name">Patrick Neyts</h4>
-                  <span className="d-block mb-10 designation">CEO / Strategic Advisor</span>
-                  <p>
-                    Patrick Neyts is the Chief Executive Officer of VECTRA International, with over 30 years of experience in ESG programs, Corporate Codes, and Responsible Business practices across 11 industry sectors and 40 countries.
-                  </p>
-                  <ul className="leader-ship-social-links" style={{position:"absolute", bottom:"2%" }}>
-                    <li>
-                      <a href="#"><img src={LinkedInLogo1} alt="LinkedIn" className="linkdin-img" /></a>
-                    </li>
-                  </ul>
-                </div>
+          <Slider ref={sliderRef} {...settings} className="leadership-slider">
+            <div className="leadership-box">
+              <div className="leader-ship-inner">
+                <img src={CareerImage1} alt="Patrick Neyts" />
+                <h4 className="leadership-name">Patrick Neyts</h4>
+                <span className="d-block mb-10 designation">CEO / Strategic Advisor</span>
+                <p>Patrick Neyts is the Chief Executive Officer of VECTRA International, with over 30 years of experience in ESG programs, Corporate Codes, and Responsible Business practices across 11 industry sectors and 40 countries.</p>
+                <ul className="leader-ship-social-links" style={{position:"absolute", bottom:"2%"}}>
+                  <li><a href="#"><img src={LinkedInLogo1} alt="LinkedIn" className="linkdin-img" /></a></li>
+                </ul>
               </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="leadership-box">
-                <div className="leader-ship-inner" style={{height: isHidden ? "650px":"", position:"relative"}}>
-                  <img src={CareerImage2} alt="Mario Rusack van Rossum" />
-                  <h4 className="leadership-name">Mario Rusack van Rossum</h4>
-                  <span className="d-block mb-10 designation">Head of Global Sales</span>
-                  <p>
-                    Mario Rusack-van Rossum is the Global Sales Lead at VECTRA International, with over 20 years of global sales experience and a strong commitment to social causes.
-                  </p>
-                  <ul className="leader-ship-social-links" style={{position:"absolute", bottom:"2%" }}>
-                    <li>
-                      <a href="#"><img src={LinkedInLogo1} alt="LinkedIn" className="linkdin-img" /></a>
-                    </li>
-                  </ul>
-                </div>
+            </div>
+            <div className="leadership-box">
+              <div className="leader-ship-inner" style={{boxShadow:"0 2px 15px 0 rgb(0, 0, 0, 0.2)"}}>
+                <img src={CareerImage2} alt="Mario Rusack van Rossum" />
+                <h4 className="leadership-name">Mario Rusack van Rossum</h4>
+                <span className="d-block mb-10 designation">Head of Global Sales</span>
+                <p>Mario Rusack-van Rossum is the Global Sales Lead at VECTRA International, with over 20 years of global sales experience and a strong commitment to social causes. He is a dynamic sales expert who brings a wealth of knowledge and passion to the team.</p>
+                <ul className="leader-ship-social-links" style={{}}>
+                  <li><a href="#"><img src={LinkedInLogo1} alt="LinkedIn" className="linkdin-img" /></a></li>
+                </ul>
               </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="leadership-box">
-                <div className="leader-ship-inner" style={{height: isHidden ? "620px":"", position:"relative"}}>
-                  <img src={CareerImage3} alt="Shalini Saini" />
-                  <h4 className="leadership-name">Shalini Saini</h4>
-                  <span className="d-block mb-10 designation">Head of Marketing and Communications</span>
-                  <p>
-                    Shalini Saini is the Head of Marketing &amp; Communications at VECTRA International, with over 15 years of public relations experience in the hospitality industry.
-                  </p>
-                  <ul className="leader-ship-social-links" style={{position:"absolute", bottom:"2%" }}>
-                    <li>
-                      <Link to="#"><img src={LinkedInLogo1} alt="LinkedIn" className="linkdin-img" /></Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="leadership-box">
-                <div className="leader-ship-inner" style={{height: isHidden ? "650px":"", position:'relative'}}>
-                  <img src={CareerImage4} alt="Lorenz Berzau" />
-                  <h4 className="leadership-name">Lorenz Berzau</h4>
-                  <span className="d-block mb-10 designation">Head of Operations/ Senior Advisor</span>
-                  <p>
-                    Lorenz Berzau is the Head of Operations at VECTRA International, with a focus on sustainability strategy, human rights, and social compliance.
-                  </p>
-                  <ul className="leader-ship-social-links" style={{position:"absolute", bottom:"2%" }}>
-                    <li>
-                      <Link to="#"><img src={LinkedInLogo1} alt="LinkedIn" className="linkdin-img" /></Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <div className="leadership-box">
-                <div className="leader-ship-inner" style={{height: isHidden ? "650px":"", position:"relative"}}>
-                  <img src={CareerImage5} alt="Noyan Canbolat" />
-                  <h4 className="leadership-name">Noyan Canbolat</h4>
-                  <span className="d-block mb-10 designation">Head of Technology</span>
-                  <p>
-                    Noyan Canbolat is the Head of Technology at VECTRA International, with over 10 years of experience in software consulting for telecom, banks, and finance sectors.
-                  </p>
-                  <ul className="leader-ship-social-links" style={{position:"absolute", bottom:"2%" }}>
-                    <li>
-                      <Link to="#"><img src={LinkedInLogo1} alt="LinkedIn" className="linkdin-img" /></Link>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </SwiperSlide>
-
+            </div>
+            <div className="leadership-box">
+                    <div className="leader-ship-inner" style={{boxShadow:"0 2px 15px 0 rgb(0, 0, 0, 0.2)"}}>
+                      <img src={CareerImage3} alt="" />
+                      <h4 className="leadership-name">Shalini Saini</h4>
+                      <span className="d-block mb-10 designation">Head of Marketing and Communications</span>
+                      <p>Shalini Saini is the Head of Marketing &amp; Communications at VECTRA International, with
+                        over 15 years of public relations experience in the hospitality industry, leveraging
+                        her dynamic leadership skills and business acumen from New Delhi, India.</p>
+                      <ul className="leader-ship-social-links" style={{position:"absolute", bottom:"2%"}}>
+                        <li><Link to="#"><img src={LinkedInLogo1} alt="" className="linkdin-img" /></Link></li>
+                      </ul>
+                    </div>
+                  </div>
+            <div className="leadership-box">
+                    <div className="leader-ship-inner" style={{boxShadow:"0 2px 15px 0 rgb(0, 0, 0, 0.2)"}}>
+                      <img src={CareerImage4} alt="" />
+                      <h4 className="leadership-name">Lorenz Berzau</h4>
+                      <span className="d-block mb-10 designation">Head of Operations/ Senior Advisor</span>
+                      <p>Lorenz Berzau is the Head of Operations at VECTRA International, based in Salvador,
+                        Brazil, with a focus on sustainability strategy, human rights, and social
+                        compliance, backed by 20 years of consultancy experience and a background in law.
+                      </p>
+                      <ul className="leader-ship-social-links" style={{position:"absolute", bottom:"2%"}}>
+                        <li><Link to="#"><img src={LinkedInLogo1} alt="" className="linkdin-img" /></Link></li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="leadership-box">
+                    <div className="leader-ship-inner" style={{boxShadow:"0 2px 15px 0 rgb(0, 0, 0, 0.2)"}}>
+                      <img src={CareerImage5} alt="" />
+                      <h4 className="leadership-name">Noyan Canbolat</h4>
+                      <span className="d-block mb-10 designation">Head of Technology</span>
+                      <p>Noyan Canbolat is the Head of Technology at VECTRA International, a passionate IT
+                        professional with over 10 years of experience in software consulting for telecom,
+                        banks, and finance sectors in Turkey, leading the development of innovative
+                        cloud-based platforms.</p>
+                      <ul className="leader-ship-social-links" style={{position:"absolute", bottom:"2%"}}>
+                        <li><Link to="#"><img src={LinkedInLogo1} alt="" className="linkdin-img" /></Link></li>
+                      </ul>
+                    </div>
+                  </div>
             {/* Add more leadership-boxes as needed */}
-          </Swiper>
+          </Slider>
+          <div className="btn-wrap" style={{display: isRemove ? "block":'none'}}>
+            <button onClick={prevSlide} style={{ margin: '10px', padding: '10px 20px', border: 'none', cursor: 'pointer' }}>
+              <img src={LeftIcon}/>
+            </button>
+            <button onClick={nextSlide} style={{ margin: '10px', padding: '10px 20px', border: 'none', cursor: 'pointer' }}>
+              <img src={RightIcon}/>
+            </button>
+          </div>
         </div>
       </div>
     </section>

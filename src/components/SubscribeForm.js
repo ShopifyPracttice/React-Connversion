@@ -40,13 +40,13 @@ const SubscribeForm = ({isOpen, setIsOpen}) => {
             <h5 className="text-center mb-4">Subscribe to Our Newsletter & Stay up to Date about the World of ESG</h5>
             <form>
               <div className="mb-3">
-                <input type="text" className="form-control" placeholder="Name" />
+                <input type="text" style={{ borderColor: '#227b2c', color:"#227b2c" }} className="form-control custom-input" placeholder="Name" />
               </div>
               <div className="mb-3">
-                <input type="text" className="form-control" placeholder="Company name" />
+                <input type="text" style={{ borderColor: '#227b2c',color:"#227b2c" }} className="form-control custom-input" placeholder="Company name" />
               </div>
               <div className="mb-3">
-                <input type="email" className="form-control" placeholder="Email" />
+                <input type="email" style={{ borderColor: '#227b2c',color:"#227b2c" }} className="form-control custom-input" placeholder="Email" />
               </div>
               <div className="mb-3 form-check">
                 <input type="checkbox" className="form-check-input" id="privacyPolicyCheck" />
@@ -54,7 +54,7 @@ const SubscribeForm = ({isOpen, setIsOpen}) => {
                   I agree to the <a href="#privacy">Privacy Policy</a> & provide consent to receiving communications from VECTRA International
                 </label>
               </div>
-              <button type="submit" className="btn btn-success w-100">Subscribe for FREE <img src={RightArrow2} alt="Arrow Icon" /></button>
+              <button type="submit" className="btn btn-success w-100" style={{background:"#227b2c "}}>Subscribe for FREE <img src={RightArrow2} alt="Arrow Icon" /></button>
             </form>
           </div>
         </div>

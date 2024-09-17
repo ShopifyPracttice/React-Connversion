@@ -394,7 +394,7 @@ const HomePage = ({setDisplayForm,setIsOpen})=>{
                 <div className="pt-80 homeAboutVideoCounterArea" style={{paddingTop:'80px'}}>
                   <div className="row rowBox align-items-center">
                     <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 columnBox mb-30">
-                      <div className="mr-50 green-bg-color homeAboutVideoArea">
+                      <div className=" green-bg-color homeAboutVideoArea">
                         <video id="video333" width="100%" height="100%" controls autoPlay loop muted playsInline>
                           <source src={Video} type="video/mp4" />
                         </video>			

@@ -86,7 +86,7 @@ function App() {
        <Header/>
        <Routes>
          <Route path='/' element={<HomePage setDisplayForm={setDisplayForm} setIsOpen={setIsOpen}/>}/>
-         <Route path='/about-us' element={<About setDisplayForm={setDisplayForm}/>}/>
+         <Route path='/about-us' element={<About setDisplayForm={setDisplayForm} setIsOpen={setIsOpen}/>}/>
          <Route path='/services' element={<Services/>}/>
          <Route path='/resources' element={<Resources setIsOpen={setIsOpen}/>}/>
          <Route path='/contact-us' element={<ContactUs/>}/>
