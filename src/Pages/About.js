@@ -422,7 +422,7 @@ const About = ({setDisplayForm}) =>{
                   <div className="vectra-join-us-wrapper">
                     <p className="block-title">From strategy to transformation,<br /> we help businesses thrive. Get the<br /> support you need.</p>
                     <div className="vectra-join-us-right">
-                      <Link to="/contact-us" onClick={()=>setDisplayForm(true)} className="custome-btn">
+                      <Link to="/contact-us"  className="custome-btn">
                         <span className="txt">Contact Us</span>
                         <span className="icon"><img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={RightArrow} /></span>
                       </Link>
@@ -436,7 +436,7 @@ const About = ({setDisplayForm}) =>{
                   <div className="vectra-join-us-wrapper">
                     <p className="block-title">Want to make a positive<br /> impact?</p>
                     <div className="vectra-join-us-right">
-                      <Link to="/careers" onClick={()=>setDisplayForm(true)} className="custome-btn">
+                      <Link to="/careers"  className="custome-btn">
                         <span className="txt">Join Us</span>
                         <span className="icon"><img className="img-fluid ls-is-cached lazyloaded" alt="logo" src={RightArrow} /></span>
                       </Link>

@@ -133,9 +133,10 @@ const SitePerformanceImprovement = ()=>{
                             </div>               
                           </div>
                         </div>
-                        <div className={`tab-pane fade meet-accordian-item" id="tabTwo" role="tabpanel `} aria-labelledby="v-pills-profile-tab" tabIndex={0}>
+                        <div className={`tab-pane fade meet-accordian-item ${isHidden && displayDropDown  &&selectDropDown === "MPS"?"curent":""}`} id="tabTwo" role="tabpanel"
+                                        aria-labelledby="v-pills-profile-tab" tabindex="0">
                           <div className="meet-right-box">
-                            <div className="meet-accordian-header" >
+                            <div className="meet-accordian-header" onClick={()=>{handleDropDownClick("MPS");}}>
                               <h4>Management Assistance Program  (MAP)</h4>
                             </div>
                             <div className="meet-accordian-body">

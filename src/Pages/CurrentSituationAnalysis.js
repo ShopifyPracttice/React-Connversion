@@ -53,7 +53,7 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
             <div className="container" style={{maxWidth:"98%"}}>
               <div className="homePageBannerSecinner">
                 <div className="homePageBannerContent">
-                  <h1 className="fw-300 mb-20">Current Situation <br /> Analysis &amp; Reporting</h1>
+                  <h1 className="fw-300 mb-20">Current Situation <br /> Analysis</h1>
                   <p>We provide a comprehensive assessment of your current situation, including a GAP analysis and
                     tailor-made recommendations for your organization.</p>
                   <Link to="#" onClick={()=>setDisplayForm(true)} className="custome-btn">
@@ -72,7 +72,7 @@ const CurrentSituationAnalysis = ({setDisplayForm})=>{
           <section className="meet-sec pt-30">
             <div className="container" style={{maxWidth:"98%"}}>
               <div className="meet-inner-sec">
-                <div className="meet-inner-header-sec" style={{padding:"10px",minHeight: isHidden?"490px":"582px"}}>
+                <div className="meet-inner-header-sec" style={{padding:"10px"}}>
                   <h3 className="mav-20 fw-400 block-title">We can help your<br /> organization meet</h3>
                 </div>
                 <div className="row align-items-center pt-20">
