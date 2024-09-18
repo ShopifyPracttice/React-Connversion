@@ -50,7 +50,7 @@ const About = ({setDisplayForm,setIsOpen}) =>{
         dots: false,  // No bullets
         infinite: true,
         speed: 500,
-        slidesToShow: 5, // Number of slides to show at once
+        slidesToShow: 4, // Number of slides to show at once
         slidesToScroll: 2,
         prevArrow: null,
         nextArrow: null,
@@ -259,20 +259,7 @@ const About = ({setDisplayForm,setIsOpen}) =>{
                       </ul>
                     </div>
                   </div>
-                  <div className="leadership-box">
-                    <div className="leader-ship-inner" style={{boxShadow:"0 2px 15px 0 rgb(0, 0, 0, 0.2)"}}>
-                      <img src={CareerImage5} alt="" />
-                      <h4 className="leadership-name">Noyan Canbolat</h4>
-                      <span className="d-block mb-10 designation">Head of Technology</span>
-                      <p>Noyan Canbolat is the Head of Technology at VECTRA International, a passionate IT
-                        professional with over 10 years of experience in software consulting for telecom,
-                        banks, and finance sectors in Turkey, leading the development of innovative
-                        cloud-based platforms.</p>
-                      <ul className="leader-ship-social-links" style={{position:"absolute", bottom:"2%"}}>
-                        <li><Link to="#"><img src={LinkedInLogo1} alt="" className="linkdin-img" /></Link></li>
-                      </ul>
-                    </div>
-                  </div>
+                  
             {/* Add more leadership-boxes as needed */}
           </Slider>
           <div className="btn-wrap" style={{display: isRemove ? "block":'none'}}>
@@ -494,7 +481,7 @@ const About = ({setDisplayForm,setIsOpen}) =>{
                     and practical tips—delivered straight to your inbox. </h4>
                   <Link to="#" onClick={()=>setIsOpen(true)} className="custome-btn subscribe-btn">
                     <span className="txt">Subscribe Now!</span>
-                    
+
                     <span className="icon"><img className="img-fluid lazyload" src={RightArrow} alt="logo" /></span>
                   </Link>
                 </div>
