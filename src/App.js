@@ -35,6 +35,7 @@ import ComplianceRiskDueDiligence from './Pages/ComplianceRiskDueDiligence';
 import EsgConsultant from './Pages/esgConsultant';
 import Error from './Pages/Error';
 import ThankYou from './Pages/ThankYou';
+import Guide from './Pages/Guide';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -104,6 +105,7 @@ function App() {
          <Route path='/press-releases' element={<PressRelease setIsOpen={setIsOpen}/>}/>
          <Route path='/search-details' element={<SearchDetails/>}/>
          <Route path='/social-impact-pledge' element={<SocialImpactPledge/>}/>
+         <Route path='/guide' element={<Guide/>}/>
          <Route path='/resources/cost-management-services' element={<CostManagementServices/>}/>
          <Route path='/register' element={<Register/>}/>
          <Route path='/service-detail/training' element={<Training setDisplayForm={setDisplayForm}/>}/>
