@@ -44,7 +44,6 @@ h4 { font-size: 18px; font-weight: 700; margin: 0 0 20px;}
 .owl-nav button:hover span { color: #fff;}
 .explore-button { display: inline-block; border: 0; background-color: #12c5ed; border: 1px solid #12c5ed; padding: 6px 30px 8px; border-radius: 30px; color: #fff; transition: 0.4s;}
 .explore-button:hover { color: #fff; background: #07aed3; border: 1px solid #07aed3;}
-.header {}
 .header .headerTopBar { background-color: rgba(34, 123, 44, 1); color: #fff; padding: 8px 0;}
 .header .navigationArea { box-shadow: 0 2px 15px rgba(0, 0, 0, .2);}
 .header .navbar { align-items: center; justify-content: space-between; margin: 0px; padding: 0px;}
@@ -71,7 +70,7 @@ h4 { font-size: 18px; font-weight: 700; margin: 0 0 20px;}
 .header .navbar .navbar-nav li .nav-contact-link {display: inline-block; background-color: rgba(34, 123, 44, 1); border: 1px solid rgba(34, 123, 44, 1); color: #fff; padding: 12px 24px; border-radius: 12px;font-size: 18px; line-height: 27px; font-weight: 400;}
 .header .navbar .navbar-nav li .nav-contact-link:hover {background-color: rgba(34, 123, 44, 1);border: 1px solid rgba(34, 123, 44, 1); color: #fff !important; font-weight: 400 !important;}
 .header .navbar .navbar-nav .dropdown_menu {position: relative;}
-.header .navbar .navbar-nav .dropdown_menu .nav-link:after {content: '\f107';margin-left: 5px;font-family: FontAwesome;font-size: 20px;transition: all ease-in-out .3s; -moz-transition: all ease-in-out .3s; -webkit-transition: all ease-in-out .3s;}
+.header .navbar .navbar-nav .dropdown_menu .nav-link:after {content: '\\f107';margin-left: 5px;font-family: FontAwesome;font-size: 20px;transition: all ease-in-out .3s; -moz-transition: all ease-in-out .3s; -webkit-transition: all ease-in-out .3s;}
 .header .navbar .navbar-nav li:hover .nav-link {font-weight: 600; color: rgba(34, 123, 44, 1);}
 .header .navbar .navbar-nav li .nav-link .fa-chevron-down { color: #14d249; font-size: 16px;}
 .header .navbar .navbar-nav li .nav-link.active { color: rgba(34, 123, 44, 1); font-weight: 600;}
@@ -105,7 +104,6 @@ h4 { font-size: 18px; font-weight: 700; margin: 0 0 20px;}
 .trustedSec { padding: 30px 0;}
 .trustedHeadingSec { margin-bottom: 20px;}
 .trustedHeadingSec .title { font-size: 24px;  line-height: 32px;}
-.trustedHeadingSec .title span {}
 .trustedSliderItem { height: 72px;  background-color: #fff;  display: flex;  align-items: center;  justify-content: center;  padding: 10px 10px;  border-radius: 4px;}
 .solutionListArea .rowBox { margin-left: -10px;  margin-right: -10px;}
 .solutionListArea .columBox { padding-left: 10px;  padding-right: 10px;}
@@ -975,9 +973,9 @@ p br, .block-title br, .homePageBannerContent h1 br, .homePageBannerOfferLink .t
 .fact-right .columnBox{padding-left: 5px;padding-right: 5px;}
 .fact-sec .fact-right .btn-wrap {display: block;text-align: center;margin-top: 10px;}
 .fact-sec .fact-right .btn-wrap .prev-btn { background-color: transparent; border: 0;    padding: 10px 15px;}
-.fact-sec .fact-right .btn-wrap .prev-btn img {}
+/* .fact-sec .fact-right .btn-wrap .prev-btn img {} */
 .fact-sec .fact-right .btn-wrap .next-btn {background-color: transparent;border: 0; padding: 10px 15px;}
-.fact-sec .fact-right .btn-wrap .next-btn img {}
+/* .fact-sec .fact-right .btn-wrap .next-btn img {} */
 .guid-banner-sec .law-left h1 {font-size: 24px;line-height: 32px; margin-bottom: 16px;}
 .guid-banner-sec .law-left h2 {font-size: 24px;line-height: 32px; margin-bottom: 16px;}
 .search-details-tab .nav-item { padding-right: 5px;}
@@ -993,7 +991,6 @@ p br, .block-title br, .homePageBannerContent h1 br, .homePageBannerOfferLink .t
 .youtube-img img { width: 100%;}
 .blogDetailsVideoArea iframe { height: 260px; width: 100%; max-width: 100%;}
 .myPopupModalDiolog {max-width: 96%;}
-.myPopupModal.show{/*display: block !important;*/}
 .myPopupModalContent .btn-close{display: block;}
 .from-box {display: block;}
 .from-box .getInTouchFormArea {max-width: 100%; padding: 26px 16px;}
@@ -1555,10 +1552,10 @@ legend+* {
     -webkit-appearance: button
 }
 
-::file-selector-button {
+/* ::file-selector-button {
     font: inherit;
     -webkit-appearance: button
-}
+} */
 
 output {
     display: inline-block
@@ -5325,11 +5322,7 @@ fieldset:disabled .btn {
     border-color: transparent
 }
 
-.nav-pills .nav-link.active,
-.nav-pills .show>.nav-link {
-    /* color: var(--bs-nav-pills-link-active-color); */
-    /* background-color: var(--bs-nav-pills-link-active-bg) */
-}
+
 
 .nav-fill .nav-item,
 .nav-fill>.nav-link {
