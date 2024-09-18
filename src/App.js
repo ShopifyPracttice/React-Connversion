@@ -36,6 +36,7 @@ import EsgConsultant from './Pages/esgConsultant';
 import Error from './Pages/Error';
 import ThankYou from './Pages/ThankYou';
 import Guide from './Pages/Guide';
+import DEIPledge from './Pages/DEIPdedge';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -106,6 +107,7 @@ function App() {
          <Route path='/search-details' element={<SearchDetails/>}/>
          <Route path='/social-impact-pledge' element={<SocialImpactPledge/>}/>
          <Route path='/guide' element={<Guide/>}/>
+         <Route path='/diversity-equity-and-inclusion-pledge' element={<DEIPledge/>}/>
          <Route path='/resources/cost-management-services' element={<CostManagementServices/>}/>
          <Route path='/register' element={<Register/>}/>
          <Route path='/service-detail/training' element={<Training setDisplayForm={setDisplayForm}/>}/>

@@ -54,7 +54,7 @@ const Footer = ()=>{
                         <ul className="footerLinks">
                           <li><Link to="/environmental-sustainability-pledge">Environmental Sustainability Pledge</Link></li>
                           <li><Link to="/social-impact-pledge">Social Impact Pledge</Link></li>
-                          {/* <li><Link to="/diversity-equity-and-inclusion-pledge">DEI Pledge</Link></li> */}
+                          <li><Link to="/diversity-equity-and-inclusion-pledge">DEI Pledge</Link></li>
                           {/*<li><a href="#">Sitemap</a></li>*/}
                         </ul>
                       </div>
