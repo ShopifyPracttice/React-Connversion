@@ -60,7 +60,7 @@ const ComplianceRiskDueDiligence = ({setDisplayForm}) =>{
             </div>
           </section>
           <section className="meet-sec pt-30">
-            <div className="container" style={{maxWidth:"98%"}}>
+            <div className="container">
               <div className="meet-inner-sec">
                 <div className="meet-inner-header-sec">
                   <h3 className="mav-20 fw-400 block-title">We can help your<br /> organization meet</h3>
@@ -295,7 +295,7 @@ const ComplianceRiskDueDiligence = ({setDisplayForm}) =>{
             </div>
           </section>
           <section className="homeSubscribeSec why-choose-sec pt-80 pb-30">
-            <div className="container" style={{maxWidth:"98%"}}>
+            <div className="container">
               <div className="why-choose-inner">
                 <div className="why-choose-inner-header-sec">
                   <h3 className="block-title fw-400 mb-10">Why Choose<br /> VECTRA International?</h3>

@@ -123,7 +123,7 @@ function App() {
        <Link id="scrollTop" class="scrollTopbtn"><img class="img-fluid lazyload" src={ArrowUp} alt=""/></Link>
         <ModalComponent displayForm={displayForm} setDisplayForm={setDisplayForm}/>
         <SubscribeForm isOpen={isOpen} setIsOpen={setIsOpen}/>
-       <Footer/>
+       <Footer setIsOpen={setIsOpen}/>
       </BrowserRouter>
     </div>
   );

@@ -69,7 +69,7 @@ const SitePerformanceImprovement = ()=>{
             </div>
           </section>
           <section className="meet-sec pt-30">
-            <div className="container" style={{maxWidth:"98%"}}>
+            <div className="container">
               <div className="meet-inner-sec">
                 <div className="meet-inner-header-sec">
                   <h3 className="mav-20 fw-400 block-title">We can help your<br /> organization meet</h3>

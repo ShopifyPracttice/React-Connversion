@@ -4,11 +4,12 @@ import PhoneLogo from "../images/icon/phone-icon.svg";
 import MailIcon from "../images/icon/mail-icon.svg";
 import LinkedInLogo from "../images/icon/linkdin-icon.svg";
 import YoutubeLogo from "../images/icon/youtube-icon.svg";
+import RightArrow from "../images/icon/right-arrow.svg";
 import FacebookLogo from "../images/icon/facebook-icon.svg";
 import InstagramLogo from "../images/icon/instagram-icon.svg";
-import TwitterLogo from "../images/icon/twitter-icon.svg";
+// import TwitterLogo from "../images/icon/twitter-icon.svg";
 import { Link } from 'react-router-dom';
-const Footer = ()=>{
+const Footer = ({setIsOpen})=>{
       return (
   
         <footer className="footer">
@@ -92,12 +93,12 @@ const Footer = ()=>{
                       </li>
                     </ul>
                   </div>
-                  {/* <div className="footerNewsletterBtnArea">
-                    <a href="#" className="custome-btn subscribe-btn">
+                  <div className="footerNewsletterBtnArea">
+                    <a href="#" className="custome-btn subscribe-btn" onClick={()=>setIsOpen(true)}>
                       <span className="txt">Subscribe to the VECTRA Newsletter</span>
                       <span className="icon"><img className="img-fluid lazyload" src={RightArrow} alt="logo" /></span>
                     </a>
-                  </div> */}
+                  </div>
                 </div>
               </div>
             </div>

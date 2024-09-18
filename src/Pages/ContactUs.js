@@ -35,79 +35,72 @@ return (
                   <div className="contact-from">
                     <div className="mw-100 getInTouchFormArea">
                       <form name="contactForm" method="post" id="contactForm">
-                        <div className="form-group">
-                          <input type="text" name="full_name" className="form-control" placeholder="Name" required />
+                        <div className="mb-3">
+                          <input type="text" style={{ borderColor: '#227b2c', color:"#227b2c" }} name="full_name" className="form-control custom-input" placeholder="Name" required />
                         </div>
-                        <div className="form-group">
-                          <input type="text" name="company_name" className="form-control" placeholder="Company name" required />
+                        <div className="mb-3">
+                          <input type="text" style={{ borderColor: '#227b2c', color:"#227b2c" }} name="company_name" className="form-control custom-input" placeholder="Company name" required />
                         </div>
-                        <div className="form-group">
-                          <input type="text" name="industry" className="form-control" placeholder="Industry" required />
+                        <div className="mb-3">
+                          <input type="text" style={{ borderColor: '#227b2c', color:"#227b2c" }} name="industry" className="form-control custom-input" placeholder="Industry" required />
                         </div>
-                        <div className="form-group">
-                          <input type="email" name="email" className="form-control" placeholder="Email" required />
+                        <div className="mb-3">
+                          <input type="email" style={{ borderColor: '#227b2c', color:"#227b2c" }} name="email" className="form-control custom-input" placeholder="Email" required />
                         </div>
-                        <div className="form-group">
-                          <div className="input-group">
-                            <span className="input-group-text">
-                              <select name="country_code" className="form-select" required>
-                                <option value={+1}>+1 </option>
-                                <option value={+44}>+44 </option>
-                                <option value={+91}>+91</option>
-                                <option value={+61}>+61 </option>
-                                <option value={+81}>+81 </option>
-                                <option value={+49}>+49 </option>
-                                <option value={+33}>+33 </option>
-                                <option value={+86}>+86 </option>
-                                <option value={+55}>+55 </option>
-                                <option value={+7}>+7 </option>
-                                <option value={+39}>+39 </option>
-                                <option value={+34}>+34 </option>
-                                <option value={+82}>+82 </option>
-                                <option value={+1}>+1 </option>
-                                <option value={+34}>+34 </option>
-                                <option value={+62}>+62 </option>
-                                <option value={+52}>+52 </option>
-                                <option value={+27}>+27 </option>
-                                <option value={+60}>+60 </option>
-                                <option value={+63}>+63 </option>
-                                <option value={+65}>+65 </option>
-                                <option value={+46}>+46 </option>
-                                <option value={+41}>+41 </option>
-                                <option value={+31}>+31 </option>
-                                <option value={+47}>+47 </option>
-                                <option value={+32}>+32 </option>
-                                <option value={+48}>+48 </option>
-                                <option value={+43}>+43 </option>
-                                <option value={+90}>+90 </option>
-                                <option value={+20}>+20 </option>
-                                <option value={+98}>+98 </option>
-                                <option value={+64}>+64 </option>
-                                <option value={+45}>+45 </option>
-                                <option value={+66}>+66 </option>
-                                <option value={+380}>+380 </option>
-                                <option value={+91}>+91 </option>
-                                <option value={+351}>+351 </option>
-                                <option value={+30}>+30 </option>
-                                <option value={+54}>+54 </option>
-                                <option value={+372}>+372 </option>
-                                <option value={+420}>+420 </option>
-                                <option value={+372}>+372 </option>
-                                <option value={+370}>+370 </option>
-                                <option value={+420}>+420 </option>
-                                <option value={+351}>+351 </option>
-                                <option value={+502}>+502 </option>
-                                <option value={+90}>+90 </option>
-                                <option value={+371}>+371 </option>
-                                <option value={+353}>+353 </option>
-                                <option value={+372}>+372 </option>
-                              </select>
+                        <div className="mb-3" style={{border:'1px solid #227b2c', borderRadius:"12px"}}>
+                          <div className="input-group" style={{borderTopLeftRadius:"12px", borderBottomLeftRadius:"12px", background:"#fff",border: 'none', borderRadius:'12px'}}>
+                            <span className="input-group-text" style={{background:"#fff", border:"none",borderTopLeftRadius:"12px", borderBottomLeftRadius:"12px"}}>
+                            <select name="country_code" class="form-select" required="" style={{border:"none"}}>
+                                                <option value="+1">+1 (US)</option>
+                                                <option value="+44">+44 (UK)</option>
+                                                <option value="+91">+91 (IN)</option>
+                                                <option value="+61">+61 (AU)</option>
+                                                <option value="+81">+81 (JP)</option>
+                                                <option value="+49">+49 (DE)</option>
+                                                <option value="+33">+33 (FR)</option>
+                                                <option value="+86">+86 (CN)</option>
+                                                <option value="+55">+55 (BR)</option>
+                                                <option value="+7">+7 (RU)</option>
+                                                <option value="+39">+39 (IT)</option>
+                                                <option value="+34">+34 (ES)</option>
+                                                <option value="+82">+82 (KR)</option>
+                                                <option value="+1">+1 (CA)</option>
+                                                <option value="+62">+62 (ID)</option>
+                                                <option value="+52">+52 (MX)</option>
+                                                <option value="+27">+27 (ZA)</option>
+                                                <option value="+60">+60 (MY)</option>
+                                                <option value="+63">+63 (PH)</option>
+                                                <option value="+65">+65 (SG)</option>
+                                                <option value="+46">+46 (SE)</option>
+                                                <option value="+41">+41 (CH)</option>
+                                                <option value="+31">+31 (NL)</option>
+                                                <option value="+47">+47 (NO)</option>
+                                                <option value="+32">+32 (BE)</option>
+                                                <option value="+48">+48 (PL)</option>
+                                                <option value="+43">+43 (AT)</option>
+                                                <option value="+90">+90 (TR)</option>
+                                                <option value="+20">+20 (EG)</option>
+                                                <option value="+98">+98 (IR)</option>
+                                                <option value="+64">+64 (NZ)</option>
+                                                <option value="+45">+45 (DK)</option>
+                                                <option value="+66">+66 (TH)</option>
+                                                <option value="+380">+380 (UA)</option>
+                                                <option value="+351">+351 (PT)</option>
+                                                <option value="+30">+30 (GR)</option>
+                                                <option value="+54">+54 (AR)</option>
+                                                <option value="+372">+372 (EE)</option>
+                                                <option value="+420">+420 (CZ)</option>
+                                                <option value="+370">+370 (LT)</option>
+                                                <option value="+502">+502 (GT)</option>
+                                                <option value="+371">+371 (LV)</option>
+                                                <option value="+353">+353 (IE)</option>
+                                            </select>
                             </span>
-                            <input type="number" name="phone_number" className="form-control" placeholder="Phone Number" required />
+                            <input type="number" style={{border:"none", color:"#227b2c", borderTopRightRadius:"12px", borderBottomRightRadius:"12px"}} name="phone_number" className="form-control custom-input" placeholder="Phone Number" required />
                           </div>
                         </div>
-                        <div className="form-group">
-                          <textarea name="notes" className="form-control" placeholder="Notes" required defaultValue={""} />
+                        <div className="mb-3">
+                          <textarea name="notes" style={{ borderColor: '#227b2c', color:"#227b2c" }} className="form-control custom-input" placeholder="Notes" required defaultValue={""} />
                         </div>
                         <div className="form-group">
                           <div className="form-check">
