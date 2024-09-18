@@ -494,6 +494,7 @@ const About = ({setDisplayForm,setIsOpen}) =>{
                     and practical tips—delivered straight to your inbox. </h4>
                   <Link to="#" onClick={()=>setIsOpen(true)} className="custome-btn subscribe-btn">
                     <span className="txt">Subscribe Now!</span>
+                    
                     <span className="icon"><img className="img-fluid lazyload" src={RightArrow} alt="logo" /></span>
                   </Link>
                 </div>
