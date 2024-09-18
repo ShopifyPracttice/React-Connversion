@@ -49,7 +49,7 @@ const SubscribeForm = ({isOpen, setIsOpen}) => {
                 <input type="email" style={{ borderColor: '#227b2c',color:"#227b2c" }} className="form-control custom-input" placeholder="Email" />
               </div>
               <div className="mb-3 form-check">
-                <input type="checkbox" className="form-check-input" id="privacyPolicyCheck" />
+                <input type="checkbox" className="form-check-input" id="privacyPolicyCheck" style={{outline:"none"}} />
                 <label className="form-check-label" htmlFor="privacyPolicyCheck">
                   I agree to the <a href="#privacy">Privacy Policy</a> & provide consent to receiving communications from VECTRA International
                 </label>

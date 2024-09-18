@@ -137,7 +137,7 @@ const Header = () => {
                   <div className="navbar-collapse-top">
                     <div className="d-flex justify-content-between align-items-center navbar-collapse-topinner">
                       <div className="leftPart">
-                        <a className="navbar-collapse-brand" href>
+                        <a className="navbar-collapse-brand" href="/">
                           <img className="img-fluid ls-is-cached lazyloaded" src={logo} alt="logo"  />
                         </a>
                       </div>
@@ -185,11 +185,11 @@ const Header = () => {
                     <li className="nav-item nav-about-item">
                       <a className="nav-link nav-about-link" href="/about-us">About Us</a>
                     </li>
-                    {/*<li class="nav-item nav-search-item">*/}
-                    {/*	<a class="nav-link nav-search-link" href="#">*/}
-                    {/*		<img class="img-fluid lazyload" data-src="images/icon/search.svg" alt="logo">*/}
-                    {/*	</a>*/}
-                    {/*</li>*/}
+                    <li class="nav-item nav-search-item">
+                    	<a class="nav-link nav-search-link" href="/search-details">
+                    		<img class="img-fluid lazyload" src={SearchIcon} alt="logo"/>
+                    	</a>
+                    </li>
                     <li className="nav-item nav-contact-item">
                       <a className="nav-link nav-contact-link" href="/contact-us">Contact Us</a>
                     </li>

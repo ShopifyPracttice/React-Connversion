@@ -6,7 +6,7 @@ import Header from './components/Header';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Footer from './components/Footer';
-import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import {BrowserRouter, Route, Routes, Navigate} from 'react-router-dom';
 import HomePage from './Pages/HomePage';
 import Services from './Pages/Services';
 import IndependentQualityAssurance from './Pages/IndependentQualityAssurance';
@@ -32,6 +32,9 @@ import ResourceBlogPage from './Pages/ResourceBlog';
 import SubscribeForm from './components/SubscribeForm';
 
 import ComplianceRiskDueDiligence from './Pages/ComplianceRiskDueDiligence';
+import EsgConsultant from './Pages/esgConsultant';
+import Error from './Pages/Error';
+import ThankYou from './Pages/ThankYou';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -93,6 +96,8 @@ function App() {
          <Route path='/careers' element={<Career/>}/>
          <Route path='/resource/blogs' element={<ResourceBlogPage/>}/>
          <Route path='/privacy-policy' element={<PrivacyPolicy/>}/>
+         <Route path='/esg-consultant' element={<EsgConsultant/>}/>
+         <Route path='/job-application-submit' element={<ThankYou/>}/>
          {/* <Route path='/modal' element={<ModalComponent/>}/> */}
          <Route path='/career/tech-support-executive' element={<TechElecutive/>}/>
          <Route path='/resource/client-success-stories' element={<NewLaptop/>}/>
@@ -108,7 +113,8 @@ function App() {
          <Route path='/service-detail/independent-quality-assurance' element={<IndependentQualityAssurance setDisplayForm={setDisplayForm}/>}/>
          <Route path='/service-detail/site-performance-improvement' element={<SitePerformanceImprovement />}/>
          <Route path='/service-detail/compliance-risk-due-diligence' element={<ComplianceRiskDueDiligence setDisplayForm={setDisplayForm}/>}/>
-
+         <Route path='/error' element={<Error/>}/>
+         <Route path='*' element={<Navigate to='/error' />} />
        </Routes>
        <Link id="scrollTop" class="scrollTopbtn"><img class="img-fluid lazyload" src={ArrowUp} alt=""/></Link>
         <ModalComponent displayForm={displayForm} setDisplayForm={setDisplayForm}/>
