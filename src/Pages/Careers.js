@@ -448,7 +448,7 @@ const Career = ()=>{
                 <h4 className="leadership-name">Mario Rusack van Rossum</h4>
                 <span className="d-block mb-10 designation">Head of Global Sales</span>
                 <p>Mario Rusack-van Rossum is the Global Sales Lead at VECTRA International, with over 20 years of global sales experience and a strong commitment to social causes. He is a dynamic sales expert who brings a wealth of knowledge and passion to the team.</p>
-                <ul className="leader-ship-social-links" style={{}}>
+                <ul className="leader-ship-social-links" style={{position:"absolute", bottom:"2%"}}>
                   <li><a href="#"><img src={LinkedInLogo1} alt="LinkedIn" className="linkdin-img" /></a></li>
                 </ul>
               </div>
