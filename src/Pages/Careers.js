@@ -75,7 +75,7 @@ const Career = ()=>{
     infinite: true,
     speed: 500,
     slidesToShow: 4, // Number of slides to show at once
-    slidesToScroll: 2,
+    slidesToScroll: 1,
     prevArrow: null,
     nextArrow: null,
     responsive: [
