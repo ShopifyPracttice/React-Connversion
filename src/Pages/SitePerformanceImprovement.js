@@ -10,6 +10,7 @@ import ChooseIcon4 from "../images/service/choose-icon4.png";
 import { Link } from "react-router-dom";
 import SitePerformanceImprovements from "../images/service/site-performance-improvement-banner.png";
 import MobileSite from "../images/service/site-performance-improvement-banner-mobile.png";
+import ClientStories from "../components/ClientStories";
 const SitePerformanceImprovement = ()=>{
   const elementRef = useRef(null);
   const [isHidden, setIsHidden] = useState(false);
@@ -350,6 +351,7 @@ const SitePerformanceImprovement = ()=>{
               </div>
             </div>
           </section>
+          <ClientStories/>
           {/* <section className="pt-80 pb-60 testimonialSec" style={{}}>
             <div className="container">
               <div className="mb-40 text-center testimonialHeader">

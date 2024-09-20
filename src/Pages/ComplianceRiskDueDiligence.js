@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef } from "react";
+import ClientStories from "../components/ClientStories";
 
 const ComplianceRiskDueDiligence = ({setDisplayForm}) =>{
     const elementRef = useRef(null);
@@ -367,6 +368,7 @@ const ComplianceRiskDueDiligence = ({setDisplayForm}) =>{
               </div>
             </div>
           </section>
+          <ClientStories/>
           <section className="pt-80 pb-60 testimonialSec" style={{display: 'none'}}>
             <div className="container">
               <div className="mb-40 text-center testimonialHeader">

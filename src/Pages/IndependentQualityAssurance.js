@@ -10,6 +10,7 @@ import ChooseIcon3 from "../images/service/choose-icon3.png";
 import ChooseIcon4 from "../images/service/choose-icon4.png";
 import ImpactBackground from "../images/bg/getInTouch-bg.webp";
 import MobileBanner from "../images/service/independent-quality-assurance-banner-mobile.png";
+import ClientStories from "../components/ClientStories";
 const IndependentQualityAssurance = ({setDisplayForm})=>{
   const elementRef = useRef(null);
     const [isHidden, setIsHidden] = useState(false);
@@ -350,6 +351,7 @@ const IndependentQualityAssurance = ({setDisplayForm})=>{
               </div>
             </div>
           </section>
+          <ClientStories/>
           {/* <section className="pt-80 pb-60 testimonialSec" style={{}}>
             <div className="container">
               <div className="mb-40 text-center testimonialHeader">

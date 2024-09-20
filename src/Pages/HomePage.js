@@ -1,5 +1,5 @@
 import OwlCarousel from 'react-owl-carousel';
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
@@ -25,6 +25,8 @@ import Client11 from "../images/client/client11.svg";
 import Client12 from "../images/client/client12.svg";
 import { Link } from 'react-router-dom';
 import ContactForm from '../components/ContactForm';
+import WhatStopping from '../components/WhatStopping';
+import ClientStories from '../components/ClientStories';
 
 const HomePage = ({setDisplayForm,setIsOpen})=>{
     const [formData, setFormData] = useState({
@@ -37,64 +39,29 @@ const HomePage = ({setDisplayForm,setIsOpen})=>{
         notes: '',
         option1: false
       });
-      const [thankYouVisible, setThankYouVisible] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
-      [name]: type === 'checkbox' ? checked : value
-    });
-  };
- 
-//   $(document).ready(function(){
-//       $('#contactForm').on('submit', function(e){
-//           e.preventDefault();
-          
-//           $.ajax({
-//               type: 'POST',
-//               url: 'send_mail.php',
-//               data: $(this).serialize(),
-//               success: function(response){
-//                   $('#thankYouPopup').show();
-//               }
-//           });
-//       });
-//   });
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const response = await fetch('send_mail.php', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams(formData).toString(),
-      });
-
-      if (response.ok) {
-        setThankYouVisible(true);
-        // Optionally, reset form
-        setFormData({
-          full_name: '',
-          company_name: '',
-          industry: '',
-          email: '',
-          country_code: '+91',
-          phone_number: '',
-          notes: '',
-          option1: false
-        });
-      } else {
-        console.error('Form submission failed');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-    }
-  };
-  console.log(thankYouVisible);
+      const elementRef = useRef(null);
+      const [isHidden, setIsHidden] = useState(false);
+      console.log("diis", isHidden);
+      
+      useEffect(() => {
+        const handleResize = () => {
+          if (elementRef.current) {
+            const width = elementRef.current.offsetWidth;
+            setIsHidden(width <= 574);
+          }
+        };
+    
+        // Initial check
+        handleResize();
+    
+        // Add event listener for resize
+        window.addEventListener('resize', handleResize);
+    
+        // Clean up event listener on component unmount
+        return () => {
+          window.removeEventListener('resize', handleResize);
+        };
+      }, []);
   
     
     const options = {
@@ -118,7 +85,7 @@ const HomePage = ({setDisplayForm,setIsOpen})=>{
         }
       };
       return (
-        <main className>
+        <main ref={elementRef}>
           <section className="homePageBanner mobilebanner">
             <div className="container" style={{maxWidth:'95%'}}>
               <div className="homePageBannerSecinner">
@@ -317,10 +284,13 @@ const HomePage = ({setDisplayForm,setIsOpen})=>{
                         <h3 className="mav-20 fw-400 block-title">Unlock Instant Solutions<br /> with the <span className="green-txt-color">VECTRA Shop</span></h3>
                         <p className="mb-25 text">Get access to the comprehensive resources<br /> for meeting your
                           company’s ESG goals.</p>
-                        <Link to="https://shop.vectra-intl.com" className="custome-btn" target="_blank">
+                          {!isHidden && (
+                            <Link to="https://shop.vectra-intl.com" className="custome-btn" target="_blank">
                           <span className="txt">Explore All</span>
                           <span className="icon"><img className="img-fluid lazyload" src={RightArrow2} alt="logo" /></span>
                         </Link>
+                          )}
+                        
                       </div>
                     </div>
                     <div className="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-12 columnBox mb-30">
@@ -342,7 +312,8 @@ const HomePage = ({setDisplayForm,setIsOpen})=>{
                             </Link>
                           </div>
                           <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 columnBox solutionListItem">
-                            <Link to="https://shop.vectra-intl.com" className="d-flex justify-content-between align-items-center solutionListIteminner">
+                            
+                              <Link to="https://shop.vectra-intl.com" className=" d-flex justify-content-between align-items-center solutionListIteminner">
                               <div className="d-flex align-items-center leftPart">
                                 <span className="icon bg2">
                                   <img className="img-fluid lazyload" src={ToolIcon} alt="logo" />
@@ -355,6 +326,7 @@ const HomePage = ({setDisplayForm,setIsOpen})=>{
                                 </span>
                               </div>
                             </Link>
+                            
                           </div>
                           <div className="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-6 columnBox solutionListItem">
                             <Link to="https://shop.vectra-intl.com" className="d-flex justify-content-between align-items-center solutionListIteminner">
@@ -388,6 +360,13 @@ const HomePage = ({setDisplayForm,setIsOpen})=>{
                           </div>
                         </div>
                       </div>
+                      {isHidden && (
+                      <Link to="https://shop.vectra-intl.com" className="custome-btn" target="_blank">
+                      <span className="txt">Explore All</span>
+                      <span className="icon"><img className="img-fluid lazyload" src={RightArrow2} alt="logo" /></span>
+                    </Link>
+                      )}
+
                     </div>
                   </div>
                 </div>
@@ -451,6 +430,8 @@ const HomePage = ({setDisplayForm,setIsOpen})=>{
               </div>
             </div>
           </section>
+          <WhatStopping/>
+          <ClientStories/>
           <ContactForm/>
           <section className="pt-50 pb-60 homeSubscribeSec" style={{paddingTop: '50px', paddingBottom: '60px'}}>
             <div className="container">

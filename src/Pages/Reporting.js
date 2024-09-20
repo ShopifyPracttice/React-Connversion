@@ -10,6 +10,7 @@ import ChooseIcon2 from "../images/service/choose-icon2.png";
 import ChooseIcon3 from "../images/service/choose-icon3.png";
 import ChooseIcon4 from "../images/service/choose-icon4.png";
 import TouchLogo from "../images/bg/getInTouch-bg.webp";
+import ClientStories from "../components/ClientStories";
 const Reporting = ({setDisplayForm}) =>{
   const elementRef = useRef(null);
     const [isHidden, setIsHidden] = useState(false);
@@ -439,6 +440,7 @@ const Reporting = ({setDisplayForm}) =>{
               </div>
             </div>
           </section>
+          <ClientStories/>
           {/* <section className="pt-80 pb-60 testimonialSec" style={{}}>
             <div className="container">
               <div className="mb-40 text-center testimonialHeader">

@@ -10,6 +10,7 @@ import FactImage3 from "../images/guide/fact-img3.png"
 import PromoVideo from "../images/guide/promovideo-img.png";
 // import TouchImage from "../images/bg/getInTouch-bg.svg";
 import TouchLogo from "../images/bg/getInTouch-bg.webp";
+import ClientStories from "../components/ClientStories";
 
 
 const Guide = () =>{
@@ -220,7 +221,7 @@ return (
               </div>
             </div>
           </section>
-          <section className="pt-80 pb-60 testimonialSec guidTestimonialSec d-none" style={{}}>
+          {/* <section className="pt-80 pb-60 testimonialSec guidTestimonialSec d-none" style={{}}>
             <div className="container">
               <div className="mb-40 text-center testimonialHeader">
                 <h3 className="block-title fw-400 mb-10">What Our Clients Are Saying about Us</h3>
@@ -421,7 +422,8 @@ return (
                   <div className="owl-nav"><button type="button" role="presentation" className="owl-prev disabled"><span><i className="fa-light fa-arrow-left" /></span></button><button type="button" role="presentation" className="owl-next"><span><i className="fa-light fa-arrow-right" /></span></button></div><div className="owl-dots disabled" /></div>
               </div>
             </div>
-          </section>
+          </section> */}
+          <ClientStories/>
           <section className="vctr-sec mb-50" id="unique-id">
             <div className="container">
               <div className="vctr-inner">
