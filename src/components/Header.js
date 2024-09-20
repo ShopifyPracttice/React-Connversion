@@ -106,9 +106,9 @@ const Header = () => {
                 <button className="navbar-toggler" onClick={()=>setIsMenuOpen(true)} type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar" aria-expanded="true">
                   <i className="fas fa-bars" />
                 </button>
-                <a className="navbar-brand" href='/'>
+                <Link className="navbar-brand" to='/'>
                   <img className="img-fluid ls-is-cached lazyloaded" src={logo} alt="logo"  />
-                </a>
+                </Link>
                 <div className="language-selector" style={{display: isRemove ?"none":"block"}}>
                   
       <button onClick={toggleDropdowns} className="dropdown-btn" style={{width:'90px'}}>
@@ -120,10 +120,10 @@ const Header = () => {
       <ul className={`dropdown-menu ${isOpen ? 'show' : ''}`}  aria-labelledby="dropdownMenuButton">
         {languages.map((language, index) => (
           <li key={index} onClick={() => selectLanguage(language)}>
-            <a className="dropdown-item d-flex align-items-center" href="#">
+            <Link className="dropdown-item d-flex align-items-center" to="#">
               <img src={language.flag} alt={language.code} className="me-2" style={{ width: '20px', height: '20px' }} />
               {language.code}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
@@ -137,14 +137,14 @@ const Header = () => {
                   <div className="navbar-collapse-top">
                     <div className="d-flex justify-content-between align-items-center navbar-collapse-topinner">
                       <div className="leftPart">
-                        <a className="navbar-collapse-brand" href="/">
+                        <Link className="navbar-collapse-brand" to="/">
                           <img className="img-fluid ls-is-cached lazyloaded" src={logo} alt="logo"  />
-                        </a>
+                        </Link>
                       </div>
                       <div className="rightPart">
-                        <a className="top-search-link" href="#">
+                        <Link className="top-search-link" to="#">
                           <img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={SearchIcon} />
-                        </a>
+                        </Link>
                         <span className="menu_close_btn" onClick={()=>setIsMenuOpen(false)}>
                           <img className="img-fluid ls-is-cached lazyloaded"  alt="logo" src={CloseIcon} />
                         </span>
@@ -158,12 +158,12 @@ const Header = () => {
                        <span onClick={()=>setIsMenuOpen(false)}> Services</span>
                       </Link>
                       <ul className="sub-menu">
-                        <li><a href="/service-detail/compliance-risk-due-diligence">Compliance, Risk, &amp; Due diligence </a></li>
-                        <li><a href="/service-detail/current-situation-analysis">Current Situation Analysis</a></li>
-                        <li><a href="/service-detail/independent-quality-assurance">Independent Quality Assurance</a></li>
-                        <li><a href="/service-detail/reporting">Reporting</a></li>
-                        <li><a href="/service-detail/site-performance-improvement">Site Performance Improvement</a></li>
-                        <li><a href="/service-detail/training">Training</a></li>
+                        <li><Link to="/service-detail/compliance-risk-due-diligence">Compliance, Risk, &amp; Due diligence </Link></li>
+                        <li><Link to="/service-detail/current-situation-analysis">Current Situation Analysis</Link></li>
+                        <li><Link to="/service-detail/independent-quality-assurance">Independent Quality Assurance</Link></li>
+                        <li><Link to="/service-detail/reporting">Reporting</Link></li>
+                        <li><Link to="/service-detail/site-performance-improvement">Site Performance Improvement</Link></li>
+                        <li><Link to="/service-detail/training">Training</Link></li>
                       </ul>
                     </li>
                     <li className={`nav-item dropdown_menu ${openSubmenu === "resources"?"curent":""}`} onClick={()=>toggleSubMenu("resources")}>
@@ -171,27 +171,27 @@ const Header = () => {
                       <span onClick={()=>setIsMenuOpen(false)}>Resources</span>
                       </Link>
                       <ul className="sub-menu">
-                        {/* <li><a href="/resources">Blogs</a></li>
-                        <li><a href="/article">Articles</a></li> */}
-                        <li><a href="/resources#blogs">Blogs</a></li>
-                        {/* <li><a href="/client-success-stories">Client Success Stories</a></li> */}
-                        <li><a href="/resources#article">Articles</a></li>
-                        <li><a href="/resources#press-releases">Press Releases</a></li>
+                        {/* <li><a to="/resources">Blogs</a></li>
+                        <li><a to="/article">Articles</a></li> */}
+                        <li><Link to="/resources#blogs">Blogs</Link></li>
+                        {/* <li><a to="/client-success-stories">Client Success Stories</a></li> */}
+                        <li><Link to="/resources#article">Articles</Link></li>
+                        <li><Link to="/resources#press-releases">Press Releases</Link></li>
                       </ul>
                     </li>
                     <li className="nav-item">
-                      <a className="nav-link" href="https://shop.vectra-intl.com" target="_blank">Shop</a>
+                      <Link className="nav-link" to="https://shop.vectra-intl.com" target="_blank">Shop</Link>
                     </li>
                     <li className="nav-item nav-about-item">
-                      <a className="nav-link nav-about-link" href="/about-us">About Us</a>
+                      <Link className="nav-link nav-about-link" to="/about-us">About Us</Link>
                     </li>
                     <li class="nav-item nav-search-item">
-                    	<a class="nav-link nav-search-link" href="/search-details">
+                    	<Link class="nav-link nav-search-link" to="/search-details">
                     		<img class="img-fluid lazyload" src={SearchIcon} alt="logo"/>
-                    	</a>
+                    	</Link>
                     </li>
                     <li className="nav-item nav-contact-item">
-                      <a className="nav-link nav-contact-link" href="/contact-us">Contact Us</a>
+                      <Link className="nav-link nav-contact-link" to="/contact-us">Contact Us</Link>
                     </li>
                   </ul>
                   <div className="navbar-collapse-region">
@@ -201,7 +201,7 @@ const Header = () => {
                   </div>
                 </div>
                 <div className="rightSide">
-                  <a className="custome-btn contactBtnBtn" href="/contact-us"><span className="txt">Contact Us</span></a>
+                  <Link className="custome-btn contactBtnBtn" to="/contact-us"><span className="txt">Contact Us</span></Link>
                 </div>
               </nav>
             </div>
